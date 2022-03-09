@@ -1,4 +1,4 @@
-# grupo_8_Digital_Wines.
+﻿# grupo_8_Digital_Wines.
 
 ¿Qué productos o servicios brindará nuestro sitio?
 Nuestro sitio será un ecommerce de una bodega de vinos, con el objetivo de vender los mejores productos en satisfacción de la clientela.
@@ -8,6 +8,9 @@ Público mayor de 18 años, amantes del vino internacional.
 
 Somos Digital Wines: 
 Alejandro Coral D:
+
+Pablo Aciar: Estoy incursionando en la programación para cambiar de rubro, soy Enologo, comerciante.
+Vivo en mendoza
 
 
 Listado de páginas a investigación:
