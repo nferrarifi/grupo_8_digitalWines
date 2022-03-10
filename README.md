@@ -8,7 +8,8 @@ Público mayor de 18 años, amantes del vino internacional.</p>
 
 <h1>Somos Digital Wines:</h1>
 
-<p><strong>Alejandro Coral D:</strong></p>
+<p><strong>Alejandro Coral D:</strong></br>
+Soy estudiante de último semestre de Cine, vivo en Bogotá, Colombia. Por mi interes en la narración entre al mundo del videojuego y su programación, para al final estar aqui, aprendiendo nuevas rutas de programación, en demás medios.</p>
 
 <p><strong>Pablo Aciar:</strong></br>
 Estoy incursionando en la programación para cambiar de rubro, soy Enologo, comerciante.
