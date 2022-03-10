@@ -7,11 +7,12 @@ Nuestro sitio será un ecommerce de una bodega de vinos, con el objetivo de vend
 Público mayor de 18 años, amantes del vino internacional.
 
 Somos Digital Wines:
+
 Alejandro Coral D:
 
 Pablo Aciar:
 Estoy incursionando en la programación para cambiar de rubro, soy Enologo, comerciante.
-Vivo en mendoza
+Vivo en mendoza.
 
 Mauro Carbajales:
 Trabajo en una agencia de marketing digital, siempre me despertó interés la programación, y ahora quiero incursionar en ella.
