@@ -17,6 +17,9 @@ Vivo en mendoza.
 Mauro Carbajales:
 Trabajo en una agencia de marketing digital, siempre me despertó interés la programación, y ahora quiero incursionar en ella.
 
+Nahuel Ferrari:
+Trabajo en sistemas back office en PwC; después de haber estado 2 años en impuestos, me pasé al sector IT y empecé a estudiar programación para poder orientar mi carrera a trabajos mas relacionados con el mundo del desarrollo y los sistemas, que es lo que me interesa.
+
 Listado de páginas a investigación:
 https://www.vinosbonfanti.com.ar/
 https://www.bodegasinfin.com/
