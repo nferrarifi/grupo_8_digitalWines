@@ -1,0 +1,11 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  background-image: url(/img/bodega.png);
+}
+
+footer {
+  background-color: #3d0704;
+}
