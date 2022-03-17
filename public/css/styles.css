@@ -1,11 +1,123 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
 }
 
-header {
-  background-image: url(/img/bodega.png);
+.todo-header{
+  background-color: #3d0704;
+  display: flex;
+  flex-wrap: nowrap;
+}
+ .logo-header{
+  width: 35%;
+}
+.explorador{
+  
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  padding: 5px;
+}
+.nav-explorer-header{
+  
+  display: none;
+
+  
+
+}
+header ul li a {
+  
+  color: #E573FF;
+  border: solid #E573FF 2px;
+  text-decoration: none;
+  padding: 1px;
+}
+.lista {
+  
+  list-style-type: none;
+  display: flex;
+}
+
+
+header nav li {
+  margin: 0px 5px;
+}
+
+
+
+div.burger-menu i {
+  background-color: #0044aa;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 20px;
+  height: 40px;
+  
+  padding: 10px;
+  width: 40px;
+}
+.burger-menu{
+  text-align: center;
+  
 }
 
 footer {
   background-color: #3d0704;
+  padding: 5px;
+  
+}
+.newsletter{
+  text-align: center;
+  display: none;
+}
+
+
+.pie-pagina {
+  
+  flex-wrap: nowrap;
+  display: flex;
+
+}
+footer ul li a {
+  
+  color: #E573FF;
+  border: solid #E573FF 2px;
+  text-decoration: none;
+  padding: 1px;
+}
+footer nav li {
+  margin: 0px 5px;
+}
+.logo-footer{
+  width: 30%;
+}
+.footer-flex{
+  
+  
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    padding: 5px;
+  
+}
+.nav-explorer-footer{
+  display: none;
+}
+
+
+@media (min-width:361px){
+ 
+  .nav-explorer-header{
+    display: block;
+  }
+  .nav-explorer-footer{
+    display: block;
+  }
+  .burger-menu{
+    display: none;
+  }
 }
