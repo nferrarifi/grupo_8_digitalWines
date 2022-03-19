@@ -9,7 +9,8 @@ body {
 }
 
 .todo-header{
-  background-color: #3d0704;
+  background-image: url(../img/barricas.jpg);
+  background-size: cover;
   display: flex;
   flex-wrap: nowrap;
 }
@@ -32,8 +33,9 @@ body {
 }
 header ul li a {
   
-  color: #E573FF;
-  border: solid #E573FF 2px;
+  color: black;
+  border: solid black 3px;
+  
   text-decoration: none;
   padding: 1px;
 }
@@ -51,7 +53,7 @@ header nav li {
 
 
 div.burger-menu i {
-  background-color: #0044aa;
+  background-color: grey;
   border-radius: 5px;
   color: #fff;
   font-size: 20px;
@@ -64,11 +66,37 @@ div.burger-menu i {
   text-align: center;
   
 }
+.banner img{
+  width: 100%;
+  
+}
+.frase{
+  font-family:'Allura', cursive;
+  color: #3d0704;
+  text-align: center;
+  margin: 20px;
+}
+main{
+  width: 100%;
+  margin: 0 auto;
+  
+  
+}
+main section article img {
+  width: 100%;
+
+}
+main section article{
+  margin: 20px 20px;
+  border: black solid 1px;
+  background-color: #fff;
+  box-shadow : 0px 0px 10px rgb( 100 , 100 , 100 );
+}
 
 footer {
-  background-color: #3d0704;
+  background-color: #3d0704; ;
   padding: 5px;
-  
+  border-top: solid black 5px;
 }
 .newsletter{
   text-align: center;
@@ -84,8 +112,7 @@ footer {
 }
 footer ul li a {
   
-  color: #E573FF;
-  border: solid #E573FF 2px;
+  
   text-decoration: none;
   padding: 1px;
 }
@@ -109,7 +136,7 @@ footer nav li {
 }
 
 
-@media (min-width:361px){
+@media (min-width:869px){
  
   .nav-explorer-header{
     display: block;
@@ -119,5 +146,17 @@ footer nav li {
   }
   .burger-menu{
     display: none;
+  }
+  .newsletter{
+    display: block;
+  }
+  .productos{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  .vinos{
+    width: 30%;
+    margin: 10px;
   }
 }
