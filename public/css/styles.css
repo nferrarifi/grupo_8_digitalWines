@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
@@ -8,49 +8,39 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-.todo-header{
+.todo-header {
   background-image: url(../img/barricas.jpg);
   background-size: cover;
   display: flex;
   flex-wrap: nowrap;
 }
- .logo-header{
+.logo-header {
   width: 35%;
 }
-.explorador{
-  
+.explorador {
   display: flex;
   justify-content: space-around;
   width: 90%;
   padding: 5px;
 }
-.nav-explorer-header{
-  
+.nav-explorer-header {
   display: none;
-
-  
-
 }
 header ul li a {
-  
   color: black;
   border: solid black 3px;
-  
+
   text-decoration: none;
   padding: 1px;
 }
 .lista {
-  
   list-style-type: none;
   display: flex;
 }
 
-
 header nav li {
   margin: 0px 5px;
 }
-
-
 
 div.burger-menu i {
   background-color: grey;
@@ -58,104 +48,89 @@ div.burger-menu i {
   color: #fff;
   font-size: 20px;
   height: 40px;
-  
+
   padding: 10px;
   width: 40px;
 }
-.burger-menu{
+.burger-menu {
   text-align: center;
-  
 }
-.banner img{
+.banner img {
   width: 100%;
-  
 }
-.frase{
-  font-family:'Allura', cursive;
+.frase {
+  font-family: "Allura", cursive;
   color: #3d0704;
   text-align: center;
   margin: 20px;
 }
-main{
+main {
   width: 100%;
   margin: 0 auto;
-  
-  
 }
 main section article img {
   width: 100%;
-
 }
-main section article{
+main section article {
   margin: 20px 20px;
   border: black solid 1px;
   background-color: #fff;
-  box-shadow : 0px 0px 10px rgb( 100 , 100 , 100 );
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
 
 footer {
-  background-color: #3d0704; ;
+  background-color: #3d0704;
   padding: 5px;
   border-top: solid black 5px;
 }
-.newsletter{
+.newsletter {
   text-align: center;
   display: none;
 }
 
-
 .pie-pagina {
-  
   flex-wrap: nowrap;
   display: flex;
-
 }
 footer ul li a {
-  
-  
   text-decoration: none;
   padding: 1px;
 }
 footer nav li {
   margin: 0px 5px;
 }
-.logo-footer{
+.logo-footer {
   width: 30%;
 }
-.footer-flex{
-  
-  
-    display: flex;
-    justify-content: space-around;
-    width: 90%;
-    padding: 5px;
-  
+.footer-flex {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  padding: 5px;
 }
-.nav-explorer-footer{
+.nav-explorer-footer {
   display: none;
 }
 
-
-@media (min-width:869px){
- 
-  .nav-explorer-header{
+@media (min-width: 869px) {
+  .nav-explorer-header {
     display: block;
   }
-  .nav-explorer-footer{
+  .nav-explorer-footer {
     display: block;
   }
-  .burger-menu{
+  .burger-menu {
     display: none;
   }
-  .newsletter{
+  .newsletter {
     display: block;
   }
-  .productos{
+  .productos {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
   }
-  .vinos{
+  .vinos {
     width: 30%;
     margin: 10px;
   }
