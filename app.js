@@ -12,4 +12,7 @@ app.get("/", (req, res) => {
   res.sendFile(path.resolve("./views/index.html"));
 });
 
+app.get("/productdetail", (req, res) => {
+  res.sendFile(path.resolve("./views/productdetail.html"));
+});
 

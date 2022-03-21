@@ -95,29 +95,91 @@ div.burger-menu i {
 
 /*HEADER*/
 
-.banner img {
-  width: 100%;
-}
-.frase {
-  font-family: "Allura", cursive;
-  color: #3d0704;
-  text-align: center;
-  margin: 20px;
-}
 main {
+  width: 100%;
   height: 100%;
+}
+
+/*main product section*/
+
+.main-product-section {
   width: 100%;
-  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
 }
-main section article img {
+
+.main-product {
+  display: flex;
+  width: 60%;
+}
+
+.product-image-div {
+  width: 50%;
+  display: flex;
+}
+
+.product-image {
+  width: 50%;
+  margin: 10%;
+  display: block;
+  align-self: center;
+}
+
+.product-text {
+  width: 50%;
+  padding: 25px;
+  margin-top: 10%;
+}
+
+.product-title {
+  margin-bottom: 20px;
+}
+
+.product-price {
+  margin-bottom: 10px;
+}
+
+.product-description {
+  margin-bottom: 10px;
+}
+
+/*main product section*/
+
+/*related products section*/
+
+.related-products-section {
   width: 100%;
 }
-main section article {
-  margin: 20px 20px;
-  border: black solid 1px;
-  background-color: #fff;
-  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+
+.related-products-text {
+  text-align: center;
+  font-weight: 100;
+  font-size: 17px;
 }
+
+.related-products-imgs {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+}
+
+.related-products-imgs-container {
+  width: 10%;
+  padding: 1%;
+  justify-content: center;
+  display: flex;
+  flex-wrap: nowrap;
+  border: solid 2px #3d0704;
+}
+
+.related-img {
+  width: 25%;
+}
+
+/*related products section*/
 
 /*FOOTER*/
 
@@ -201,5 +263,9 @@ footer nav li {
   .vinos {
     width: 30%;
     margin: 10px;
+  }
+
+  .main-product {
+    width: 30%;
   }
 }
