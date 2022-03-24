@@ -1,0 +1,271 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: rgba(199, 184, 157, 0.616);
+}
+/*HEADER*/
+
+.todo-header {
+  background-image: url(../img/barricas.jpg);
+  background-size: cover;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: start;
+  width: 100%;
+}
+.logo-div {
+  width: 20%;
+}
+
+.logo-header {
+  width: 100%;
+}
+
+.explorador {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding: 5px;
+}
+.nav-explorer-header {
+  display: none;
+  align-self: center;
+}
+
+.nav-explorer-header ul li a {
+  color: black;
+  border: solid black 3px;
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  text-decoration: none;
+  padding: 5px;
+  background-color: rgba(185, 183, 183, 0.486);
+}
+.nav-utility-header ul li a {
+  color: black;
+  text-decoration: none;
+  padding: 1px;
+  border: none;
+}
+
+.nav-icon i {
+  font-size: 25px;
+}
+
+.nav-utility-header {
+  align-self: center;
+  justify-self: end;
+  margin-right: 5%;
+}
+.lista {
+  list-style-type: none;
+  display: flex;
+}
+
+.lista li a {
+  padding: 5px;
+}
+
+header nav li {
+  margin: 0px 5px;
+}
+
+div.burger-menu i {
+  background-color: grey;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 20px;
+  height: 40px;
+
+  padding: 10px;
+  width: 40px;
+}
+.burger-menu {
+  text-align: center;
+}
+
+/*Main*/
+main {
+  height: 60vh;
+  width: 100%;
+  margin: 0;
+}
+/*LOGIN*/
+.text-login {
+  text-align: center;
+  margin: 32px 288px -47px 361px;
+  font-size: 30px;
+  color: #af492f;
+  box-shadow: 2px 2px 10px #000;
+}
+.contenedor01 {
+  width: 100%;
+  align-self: center;
+  display: block;
+}
+.contenedor {
+  display: flex;
+  justify-content: space-evenly;
+  height: 85%;
+}
+main section h3 {
+  background-color: beige;
+  text-align: center;
+  width: 30%;
+  margin: 5% 0% 0% 37%;
+  font-size: 25px;
+  border: solid 2px #8d5f5fe5;
+  font-weight: 400;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.39);
+}
+
+.facebook-button {
+  background-color: #3b5998;
+  color: white;
+
+  margin: 0px 0px 5px;
+  width: 80%;
+  font-size: 15px;
+}
+.email-button {
+  background-color: aliceblue;
+  color: #222222;
+  border-radius: 1px;
+  padding: 3px 35px 2px 40px;
+  margin: 0px 0px 5px;
+  width: 80%;
+}
+.form-login {
+  background-color: #38090688;
+  width: 35%;
+  align-self: center;
+
+  color: white;
+  padding: 12px 35px;
+  margin-top: 5%;
+  box-shadow: 2px 2px 10px #000;
+}
+.options-login {
+  background-color: bisque;
+  width: 25%;
+  align-self: center;
+
+  padding: 20px 30px;
+  box-shadow: 2px 2px 10px #000;
+}
+section div form {
+  margin: 20px 0;
+  margin-top: 0;
+}
+
+section div form label {
+  text-align: end;
+}
+
+.login-button {
+  padding: 3px 9px 4px 10px;
+  margin-top: 13px;
+  font-size: 13px;
+  color: black;
+  background-color: antiquewhite;
+}
+section div form p {
+  font-size: 13px;
+  margin-top: 10px;
+  height: 20px;
+}
+section div form input {
+  border-color: #222;
+  width: 100%;
+  padding: 7px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+/*FOOTER*/
+footer {
+  background-color: #3d0704;
+  padding: 5px;
+}
+.newsletter {
+  text-align: center;
+  display: none;
+  color: #fff;
+}
+
+h4 {
+  font-weight: 600;
+}
+
+.pie-pagina {
+  flex-wrap: nowrap;
+  display: flex;
+}
+footer ul li a {
+  text-decoration: none;
+  padding: 1px;
+}
+footer nav li {
+  margin: 0px 5px;
+}
+
+.div-logo-footer {
+  width: 10%;
+}
+
+.logo-footer {
+  width: 100%;
+}
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding: 5px;
+}
+.nav-explorer-footer {
+  display: none;
+  align-self: flex-end;
+  margin-bottom: 10px;
+  margin-left: 35%;
+}
+
+.nav-explorer-footer a,
+.nav-utility-footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-utility-footer {
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
+
+/*FOOTER*/
+
+@media (min-width: 869px) {
+  .nav-explorer-header {
+    display: block;
+  }
+  .nav-explorer-footer {
+    display: block;
+  }
+  .burger-menu {
+    display: none;
+  }
+  .newsletter {
+    display: block;
+  }
+  .productos {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  .vinos {
+    width: 30%;
+    margin: 10px;
+  }
+}

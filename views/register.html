@@ -9,7 +9,7 @@
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="/css/styles.css"
+      href="/css/styles-register.css"
     />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -38,13 +38,13 @@
           <nav class="nav-explorer-header">
             <ul class="lista">
               <li>
-                <a href="#"><strong>Inicio</strong></a>
+                <a href="/"><strong>Inicio</strong></a>
               </li>
               <li>
                 <a href="#"><strong>Tienda</strong></a>
               </li>
               <li>
-                <a href="#"><strong>Sobre nosotros</strong></a>
+                <a href="/productdetail"><strong>Sobre nosotros</strong></a>
               </li>
               <li>
                 <a href="#"><strong>Contacto</strong></a>
@@ -60,7 +60,7 @@
                 ></a>
               </li>
               <li>
-                <a href="#" class="nav-icon"
+                <a href="/productCart" class="nav-icon"
                   ><i class="fas fa-shopping-cart"></i
                 ></a>
               </li>
@@ -72,66 +72,45 @@
         <i class="fas fa-bars"></i>
       </div>
     </header>
-
     <main>
       <section>
-        <div class="frase">
-          <p>
-            «Un buen vino es como una buena película: dura un instante y te deja
-            en la boca un sabor a gloria; es nuevo en cada sorbo y, como ocurre
-            con las películas, nace y renace en cada saboreador.» Federico
-            Fellini
-          </p>
+        <h3>Register</h3>
+      </section>
+
+      <section class="contenedor">
+        <div class="form-login">
+          <form action="/" method="get">
+            <label for="User" class="label-text"> User </label><br />
+            <input type="text" name="User" placeholder="User" /><br />
+            <label for="password" class="label-text"> Password </label><br />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+            /><br />
+            <label for="password">Confirmar contraseña</label>
+            <input type="password" name="password" placeholder="password" />
+            <label for="email" class="label-text"> E-mail</label>
+            <input type="email" name="email" placeholder="e-mail" />
+            <label for="direccion" class="label-text">Address</label>
+            <input type="text" name="direccion" placeholder="Dirreción" /><br />
+
+            <p>
+              Estoy de acuerdo con los <a href="#"> Terminos y Condiciones</a>
+            </p>
+            <button type="submit" class="login-button">Register</button>
+          </form>
         </div>
-        <div class="productos">
-          <article class="VINOS">
-            <a href="/productdetail">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
-          <article class="VINOS">
-            <a href="/productdetail">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
-          <article class="VINOS">
-            <a href="/productdetail">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
+        <div class="options-login">
+          <h4>or Login whit</h4>
+          <br />
+          <button type="button" class="facebook-button">Facebook</button><br />
+          <button type="button" class="email-button">Email</button><br />
+          <button class="register-button" type="submit">Ingresar</button><br />
         </div>
       </section>
     </main>
+
     <footer>
       <div class="newsletter">
         <h4>Newsletter</h4>
