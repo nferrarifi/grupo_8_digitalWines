@@ -135,7 +135,7 @@ main section h3 {
 }
 .form-login {
   background-color: #38090688;
-  width: 35%;
+  width: 75%;
   align-self: center;
   height: 90%;
   color: white;
@@ -150,6 +150,7 @@ main section h3 {
   height: 40%;
   padding: 20px 30px;
   box-shadow: 2px 2px 10px #000;
+  display: none;
 }
 section div form {
   margin: 20px 0;
@@ -265,3 +266,11 @@ footer nav li {
     margin: 10px;
   }
 }
+@media (min-width: 690px) {
+  .options-login {
+    display: block;
+  }
+  .form-login {
+    width: 45%;
+  }
+} ;
