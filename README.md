@@ -32,3 +32,9 @@ Trabajo en sistemas back office en PwC; después de haber estado 2 años en impu
 </ul>
 
 <p>Estos sitios representan bodegas boutique como la que queremos representar nosotros; esteticamente son atractivos para la venta del producto, especialmente vinos Bonfanti.</p>
+
+
+
+
+Enlace a nuestro tablero de trabajo:
+https://trello.com/b/Aj7qpp6B/proyecto-digital-wines
