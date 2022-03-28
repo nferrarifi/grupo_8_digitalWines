@@ -110,10 +110,19 @@
  .imagen-bodega{
      width: 100%;
  }
- .viñedos, .historia, .bodega {
-     padding: 15px;
+ .vinedos, .historia, .bodega {
+     padding: 30px;
      text-align: center;
  }
+ .parrafo-bodega {
+   padding-bottom: 50px;
+   
+ }
+ .parrafo-vinedo {
+   padding-bottom: 50px;
+   
+ }
+
  
   
 
@@ -201,5 +210,6 @@
       width: 30%;
       margin: 10px;
     }
+   
   }
   
