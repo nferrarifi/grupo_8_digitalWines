@@ -12,4 +12,6 @@ Nos juntamos y nos pusimos de acuerdo en la temática del sitio, como también a
 
 La manera de trabajo de juntarse, ponerse de acuerdo en como proceder, y luego distribuir las tareas para poder trabajarlas individualmente
 
+¿Qué deberíamos dejar de hacer?
+
 [Pending]
