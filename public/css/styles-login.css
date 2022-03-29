@@ -131,8 +131,11 @@ main section h3 {
   width: 80%;
   font-size: 15px;
 }
+.facebook-button:hover {
+  background-color: #3265d3d2;
+}
 .email-button {
-  background-color: aliceblue;
+  background-color: rgb(255, 255, 255);
   color: #222222;
   border-radius: 1px;
   padding: 3px 35px 2px 40px;
@@ -157,6 +160,7 @@ main section h3 {
   box-shadow: 2px 2px 10px #000;
   display: none;
 }
+
 section div form {
   margin: 20px 0;
   margin-top: 0;
@@ -165,6 +169,9 @@ section div form {
 section div form label {
   text-align: end;
 }
+.email-button:hover {
+  background-color: rgba(255, 254, 254, 0.801);
+}
 
 .login-button {
   padding: 3px 9px 4px 10px;
@@ -172,6 +179,9 @@ section div form label {
   font-size: 13px;
   color: black;
   background-color: antiquewhite;
+}
+.login-button:hover {
+  background-color: rgba(250, 235, 215, 0.808);
 }
 section div form p {
   font-size: 13px;
