@@ -6,7 +6,7 @@ Nos juntamos y nos pusimos de acuerdo en la temática del sitio, como también a
 
 ¿Qué hicimos mal?
 
-[Pending]
+No trabajamos con ramas en git/github
 
 ¿Qué deberíamos seguir haciendo?
 
@@ -14,4 +14,4 @@ La manera de trabajo de juntarse, ponerse de acuerdo en como proceder, y luego d
 
 ¿Qué deberíamos dejar de hacer?
 
-[Pending]
+Postergar nuestra primera reunión, ya que es la que permite que podamos comenzar a trabajar de forma individual
