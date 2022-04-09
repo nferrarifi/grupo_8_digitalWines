@@ -78,14 +78,11 @@
             <img src="/img/wine-bottle.png" class="product-image" />
         </div>
           <div class="product-text">
-            <h2 class="product-title">Nombre del Producto</h2>
-            <h3 class="product-price">$9,999</h4>
-            <h4 class="product-description">Descripcion del producto</h6>
+            <h2 class="product-title"><%= product.name %></h2>
+            <h3 class="product-price"><%= product.price %></h4>
+            <h4 class="product-description"><%= product.descriptionTitle %></h6>
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
-              officia aperiam hic repellendus sit inventore suscipit qui vel,
-              minima iusto cum aliquid, obcaecati, non ipsa molestias libero
-              sunt quam nemo.
+              <%= product.description %>
             </p>
             <br>
             <div class="purchase-buttons">
