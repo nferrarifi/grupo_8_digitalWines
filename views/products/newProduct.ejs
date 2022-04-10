@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Digital Wines - Inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/css/styles-newProduct.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="/css/normalize.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/86df6f0eff.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <%- include ("../partials/header") %>
+
+    <main>
+      <form action="/crear-producto" method="" class="">
+        <div class="manejar-formulario">
+          <label>Nombre del producto</label>
+          <input type="text" name="nombre" class="manejar-inputs" />
+        </div>
+        <div class="manejar-formulario">
+          <label>Precio</label>
+          <input
+            type="number"
+            name="precio"
+            placeholder=""
+            class="manejar-inputs"
+          />
+        </div>
+        <div class="manejar-formulario">
+          <label>Categoría</label>
+          <select name="categoria" class="manejar-inputs">
+            <option value="entry-level">Entry Level</option>
+            <option value="reserva">Reserva</option>
+            <option value="gran-reserva">Gran Reserva</option>
+            <option value="icono">Ícono</option>
+          </select>
+        </div>
+
+        <div class="manejar-formulario">
+          <label>Tamaño</label>
+          <select name="tamano" class="manejar-inputs">
+            <option value="375">375ml</option>
+            <option value="750">750ml</option>
+          </select>
+        </div>
+
+        <div class="div_form_group">
+          <label for="foto" class="form_label">Foto:</label>
+          <input
+            type="file"
+            name="foto"
+            id="foto"
+            class="form_input"
+            accept=".jpg,png"
+          />
+        </div>
+
+        <div class="manejar-formulario"></div>
+
+        <div class="manejar-formulario">
+          <label>Está en oferta?</label>
+          <input type="radio" name="en-oferta" />
+        </div>
+        <button type="submit" class="boton-formulario">Enviar</button>
+        <button type="reset" class="boton-formulario">Borrar</button>
+      </form>
+    </main>
+
+    <%- include ("../partials/footer") %>
+  </body>
+</html>
