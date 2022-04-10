@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Digital Wines - Inicio</title>
+    <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="/css/styles.css"
+      href="/css/styles-productdetail.css"
     />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -29,7 +29,10 @@
   </head>
 
   <body>
-    <header>
+
+    <%- include ("../partials/header") %>
+
+<!--     <header>
       <div class="todo-header">
         <div class="logo-div">
           <img src="/img/digitalwines-transparent.png" class="logo-header" />
@@ -55,9 +58,7 @@
           <nav class="nav-utility-header">
             <ul class="lista">
               <li>
-                <a href="/login" class="nav-icon"
-                  ><i class="fas fa-user"></i
-                ></a>
+                <a href="/login" class="nav-icon"><i class="fas fa-user"></i></a>
               </li>
               <li>
                 <a href="/productCart" class="nav-icon"
@@ -71,68 +72,71 @@
       <div class="burger-menu">
         <i class="fas fa-bars"></i>
       </div>
-    </header>
+    </header> -->
 
     <main>
-      <section>
-        <div class="frase">
-          <p>
-            «Un buen vino es como una buena película: dura un instante y te deja
-            en la boca un sabor a gloria; es nuevo en cada sorbo y, como ocurre
-            con las películas, nace y renace en cada saboreador.» Federico
-            Fellini
-          </p>
+      <section class="main-product-section">
+        <div class="main-product">
+         <div class="product-image-div">
+            <img src="/img/wine-bottle.png" class="product-image" />
         </div>
-        <div class="productos">
-          <article class="VINOS">
-            <a href="/productdetail">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
-          <article class="VINOS">
-            <a href="/productdetail">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
-          <article class="VINOS">
-            <a href="/productdetail">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
+          <div class="product-text">
+            <h2 class="product-title"><%= product.name %></h2>
+            <h3 class="product-price"><%= product.price %></h4>
+            <h4 class="product-description"><%= product.descriptionTitle %></h6>
+            <p>
+              <%= product.description %>
+            </p>
+            <br>
+            <div class="purchase-buttons">
+            <input type="number" class="product-quantity"></input>
+            <button type="submit" class="add-product"><i class="fas fa-cart-plus"></i></button>
+            </div>
+            <div class="cart-button"><a href="productCart">Finalizar compra</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="related-products-section">
+            <h3 class="related-products-text">Productos relacionados</h3>
+
+        <div class="related-products-imgs">
+            <container class="related-products-imgs-container">
+                <img src="/img/wine-bottle.png" class="related-img">
+                <p class="related-products-tag">
+                    <strong>Nombre</strong>
+                    $9,999
+                </p>
+            </container>
+            <container class="related-products-imgs-container">
+                <img src="/img/wine-bottle.png" class="related-img">
+                <p class="related-products-tag">
+                    <strong>Nombre</strong>
+                    $9,999
+                </p>
+            </container>
+            <container class="related-products-imgs-container">       
+                <img src="/img/wine-bottle.png" class="related-img">
+                <p class="related-products-tag">
+                    <strong>Nombre</strong>
+                    $9,999
+                </p>
+            </container>
+            <container class="related-products-imgs-container">
+                <img src="/img/wine-bottle.png" class="related-img">
+                <p class="related-products-tag">
+                    <strong>Nombre</strong>
+                    $9,999
+                </p>
+            </container>
         </div>
       </section>
     </main>
-    <footer>
+
+    <%- include ("../partials/footer") %>
+
+
+<!--     <footer>
       <div class="newsletter">
         <h4>Newsletter</h4>
 
@@ -168,6 +172,6 @@
           </nav>
         </div>
       </div>
-    </footer>
+    </footer> -->
   </body>
 </html>
