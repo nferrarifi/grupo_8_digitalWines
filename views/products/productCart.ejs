@@ -29,49 +29,7 @@
   </head>
 
   <body>
-    <header>
-      <div class="todo-header">
-        <div class="logo-div">
-          <img src="/img/digitalwines-transparent.png" class="logo-header" />
-        </div>
-        <div class="explorador">
-          <nav class="nav-explorer-header">
-            <ul class="lista">
-              <li>
-                <a href="/"><strong>Inicio</strong></a>
-              </li>
-              <li>
-                <a href="#"><strong>Tienda</strong></a>
-              </li>
-              <li>
-                <a href="/about-us"><strong>Sobre nosotros</strong></a>
-              </li>
-              <li>
-                <a href="#"><strong>Contacto</strong></a>
-              </li>
-            </ul>
-          </nav>
-
-          <nav class="nav-utility-header">
-            <ul class="lista">
-              <li>
-                <a href="/login" class="nav-icon"
-                  ><i class="fas fa-user"></i
-                ></a>
-              </li>
-              <li>
-                <a href="/productCart" class="nav-icon"
-                  ><i class="fas fa-shopping-cart"></i
-                ></a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <div class="burger-menu">
-        <i class="fas fa-bars"></i>
-      </div>
-    </header>
+    <%- include ("../partials/header") %>
     <main>
       <section class="cart">
         <h1 class="tu-carrito">TU CARRITO</h1>
@@ -105,42 +63,6 @@
         </div>
       </section>
     </main>
-    <footer>
-      <div class="newsletter">
-        <h4>Newsletter</h4>
-
-        <input type="search" />
-        <button type="submit">Suscribirse</button>
-      </div>
-      <div class="pie-pagina">
-        <div class="div-logo-footer">
-          <img src="/img/digitalwines-transparent.png" class="logo-footer" />
-        </div>
-
-        <div class="footer-flex">
-          <nav class="nav-explorer-footer">
-            <ul class="lista">
-              <li><a href="#">Tienda</a></li>
-              <li><a href="/about-us">Sobre nosotros</a></li>
-              <li><a href="#">Contacto</a></li>
-            </ul>
-          </nav>
-
-          <nav class="nav-utility-footer">
-            <ul class="lista">
-              <li>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </footer>
+    <%- include ("../partials/footer") %>
   </body>
 </html>
