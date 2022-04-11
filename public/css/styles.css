@@ -113,8 +113,9 @@ main section article img {
   width: 100%;
 }
 main section article {
+  
   margin: 20px 20px;
-  border: black solid 1px;
+  border:#3d0704  solid 1px;
   background-color: #fff;
   box-shadow: 0px 0px 10px rgb(100, 100, 100);
 }
