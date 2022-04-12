@@ -96,35 +96,15 @@
     margin-top: 1%;
   }
   /*LOGIN*/
-  .text-register {
-    text-align: center;
-    margin: 32px 288px -47px 361px;
-    font-size: 25px;
-    color: #81311db4;
-    box-shadow: 2px 2px 10px #000;
-  }
- 
+
  .contenedor{
    width: auto;
-   
    display: flex;
    justify-content: center;
    height: auto;
    
  }
-  main section h3 {
-    background-color: beige;
-    text-align: center;
-    width: 30%;
-    margin: 3% 0% 0% 37%;
-    font-size: 25px;
-    border: solid 2px #8d5f5fe5;
-    font-weight: 400;
-    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.39);
-  }
-  
- 
-  main section form{
+    main section form{
     background-color: #4e0808c7;
     
     align-self: center;
@@ -141,54 +121,9 @@
     padding: 6px 0;
 
   }
-  .options-login {
-    background-color: bisque;
-    width: 25%;
-    align-self: center;
-    height: 40%;
-    padding: 20px 30px;
-    box-shadow: 2px 2px 10px #000;
-    display: none;
-  }
-  section div form {
-    margin: 20px 0;
-    margin-top: 5px;
-  }
-  
-  section div form label {
-    text-align: end;
-  }
-  
-  .login-button {
-    padding: 4px;
-    margin-top: 13px;
-    width: 30%;
-    font-size: 13px;
-    color: black;
-    background-color: antiquewhite;
-  }
+
   .login-button:hover {
     background-color: rgba(250, 235, 215, 0.808);
-  }
-  section div form p {
-    font-size: 13px;
-    margin-top: 10px;
-    height: 20px;
-    margin-bottom: 5px;
-  }
-  section div form input {
-    border-color: #222;
-    width: 100%;
-    padding: 7px;
-    border-radius: 3px;
-    margin-bottom: 6px;
-    font-size: 15px;
-  }
-  .email-button:hover {
-    background-color: rgba(255, 255, 255, 0.925);
-  }
-  .facebook-button:hover {
-    background-color: #3265d3d2;
   }
   /*FOOTER*/
   footer {
