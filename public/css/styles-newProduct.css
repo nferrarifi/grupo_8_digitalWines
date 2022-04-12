@@ -90,10 +90,10 @@
   
   /*Main*/
   main {
-    height: 82vh;
+    height: auto;
     width: 100%;
-    margin: 0;
-    margin-top: 4%;
+   
+    margin-top: 1%;
   }
   /*LOGIN*/
   .text-register {
@@ -103,10 +103,15 @@
     color: #81311db4;
     box-shadow: 2px 2px 10px #000;
   }
-  .contenedor {
-    display: flex;
-    justify-content: space-evenly;
-  }
+ 
+ .contenedor{
+   width: auto;
+   
+   display: flex;
+   justify-content: center;
+   height: auto;
+   
+ }
   main section h3 {
     background-color: beige;
     text-align: center;
@@ -118,30 +123,23 @@
     box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.39);
   }
   
-  .facebook-button {
-    background-color: #3b5998;
-    color: white;
-    padding: 3px;
-    margin: 0px 0px 5px;
-    width: 60%;
-  }
-  .email-button {
-    background-color: rgba(233, 231, 231, 0.925);
-    color: #222222;
-    border-radius: 1px;
-    padding: 3px;
-    margin: 0px 0px 5px;
-    width: 60%;
-  }
-  .form-login {
-    background-color: #38090688;
-    width: 75%;
+ 
+  main section form{
+    background-color: #4e0808c7;
+    
     align-self: center;
-    height: 90%;
-    color: white;
-    padding: 3px 34px;
-    margin-top: 3%;
+    height: auto;
+    color: #fff4cc;;
+    padding: 10px 34px;
+    
     box-shadow: 2px 2px 10px #000;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  .manejar-formulario{
+    padding: 6px 0;
+
   }
   .options-login {
     background-color: bisque;
@@ -259,6 +257,10 @@
     .nav-explorer-header {
       display: block;
     }
+    footer {
+      position: absolute;
+      bottom: 0;
+    }
     .nav-explorer-footer {
       display: block;
     }
@@ -276,6 +278,9 @@
     .vinos {
       width: 30%;
       margin: 10px;
+    }
+    main{
+      height: auto;
     }
   }
   @media (min-width: 690px) {

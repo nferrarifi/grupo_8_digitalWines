@@ -31,58 +31,60 @@
     <%- include ("../partials/header") %>
 
     <main>
-      <form action="/crear-producto" method="" class="">
-        <div class="manejar-formulario">
-          <label>Nombre del producto</label>
-          <input type="text" name="nombre" class="manejar-inputs" />
-        </div>
-        <div class="manejar-formulario">
-          <label>Precio</label>
-          <input
-            type="number"
-            name="precio"
-            placeholder=""
-            class="manejar-inputs"
-          />
-        </div>
-        <div class="manejar-formulario">
-          <label>Categoría</label>
-          <select name="categoria" class="manejar-inputs">
-            <option value="entry-level">Entry Level</option>
-            <option value="reserva">Reserva</option>
-            <option value="gran-reserva">Gran Reserva</option>
-            <option value="icono">Ícono</option>
-          </select>
-        </div>
+      <section class="contenedor">
+        <form action="/crear-producto" method="" class="form-product">
+          <div class="manejar-formulario">
+            <label>Nombre del producto</label>
+            <input type="text" name="nombre" class="manejar-inputs" />
+          </div>
+          <div class="manejar-formulario">
+            <label>Precio</label>
+            <input
+              type="number"
+              name="precio"
+              placeholder=""
+              class="manejar-inputs"
+            />
+          </div>
+          <div class="manejar-formulario">
+            <label>Categoría</label>
+            <select name="categoria" class="manejar-inputs">
+              <option value="entry-level">Entry Level</option>
+              <option value="reserva">Reserva</option>
+              <option value="gran-reserva">Gran Reserva</option>
+              <option value="icono">Ícono</option>
+            </select>
+          </div>
 
-        <div class="manejar-formulario">
-          <label>Tamaño</label>
-          <select name="tamano" class="manejar-inputs">
-            <option value="375">375ml</option>
-            <option value="750">750ml</option>
-          </select>
-        </div>
+          <div class="manejar-formulario">
+            <label>Tamaño</label>
+            <select name="tamano" class="manejar-inputs">
+              <option value="375">375ml</option>
+              <option value="750">750ml</option>
+            </select>
+          </div>
 
-        <div class="div_form_group">
-          <label for="foto" class="form_label">Foto:</label>
-          <input
-            type="file"
-            name="foto"
-            id="foto"
-            class="form_input"
-            accept=".jpg,png"
-          />
-        </div>
+          <div class="manejar-formulario">
+            <label for="foto" class="form_label">Foto:</label>
+            <input
+              type="file"
+              name="foto"
+              id="foto"
+              class="form_input"
+              accept=".jpg,png"
+            />
+          </div>
 
-        <div class="manejar-formulario"></div>
+          <div class="manejar-formulario"></div>
 
-        <div class="manejar-formulario">
-          <label>Está en oferta?</label>
-          <input type="radio" name="en-oferta" />
-        </div>
-        <button type="submit" class="boton-formulario">Enviar</button>
-        <button type="reset" class="boton-formulario">Borrar</button>
-      </form>
+          <div class="manejar-formulario">
+            <label>Está en oferta?</label>
+            <input type="radio" name="en-oferta" />
+          </div>
+          <button type="submit" class="boton-formulario">Enviar</button>
+          <button type="reset" class="boton-formulario">Borrar</button>
+        </form>
+      </section>
     </main>
 
     <%- include ("../partials/footer") %>
