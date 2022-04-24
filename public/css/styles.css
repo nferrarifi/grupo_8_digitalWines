@@ -137,6 +137,9 @@ main section article:hover {
 footer {
   background-color: #3d0704;
   padding: 5px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%
 }
 .newsletter {
   text-align: center;

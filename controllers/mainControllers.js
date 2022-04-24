@@ -1,11 +1,13 @@
 const express = require ("express")
 const path = require ("path")
 const products = require ('../models/products')
+const destacados = products.filter ((vino) => vino.destacado === true)
+
 
 const mainControllers = {
 
 index: (req,res) => {
-    res.render ('index')
+    res.render ('index', { destacados })
 },
 
 productDetail: (req,res) => {

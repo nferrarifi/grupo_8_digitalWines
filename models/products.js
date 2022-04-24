@@ -4,6 +4,8 @@ const products = [
     id: 1,
     name: "Nombre del Producto",
     price: "$9,999",
+    discount: "40",
+    destacado: true,
     descriptionTitle: "Descripción del producto",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi officia aperiam hic repellendus sit inventore suscipit qui vel, minima iusto cum aliquid, obcaecati, non ipsa molestias libero sunt quam nemo.",
     }, 
@@ -12,6 +14,8 @@ const products = [
     id: 2,
     name: "Nombre del Producto",
     price: "$9,999",
+    discount: "60",
+    destacado: true,
     descriptionTitle: "Descripción del producto",
     description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi officia aperiam hic repellendus sit inventore suscipit qui vel, minima iusto cum aliquid, obcaecati, non ipsa molestias libero sunt quam nemo.",
 }

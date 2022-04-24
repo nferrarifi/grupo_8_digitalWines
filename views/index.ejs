@@ -42,8 +42,12 @@
           </p>
         </div>
         <div class="productos">
+          <% 
+          destacados.forEach(vino => {
+            
+            %>
           <article class="VINOS">
-            <a href="/productdetail/1">
+            <a href="/productdetail/<%= vino.id %>">
               <img
                 class="imagen-producto"
                 src="/img/red-wine-4813262_640.jpg"
@@ -51,285 +55,19 @@
               />
               <div class="descripcion-articulo">
                 <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
+                <p class="precio"><%= vino.price %></p>
+                <p class="descuento"><%= vino.discount %>% OFF</p>
+                <h4 class="titulo"><%= vino.name %></h4>
               </div>
-            </a>
           </article>
-          <article class="VINOS">
-            <a href="/productdetail/1">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
-          <article class="VINOS">
-            <a href="/productdetail/1">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
-          <article class="VINOS">
-            <a href="/productdetail/1">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
+
+          <% }) %>
         </div>
-        <div class="productos">
-          <article class="VINOS">
-            <a href="/productdetail/1">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
-          <article class="VINOS">
-            <a href="/productdetail/1">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
-          <article class="VINOS">
-            <a href="/productdetail/1">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
-          <article class="VINOS">
-            <a href="/productdetail/1">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
-        </div>
-        <div class="productos">
-          <article class="VINOS">
-            <a href="/productdetail/1">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
-          <article class="VINOS">
-            <a href="/productdetail/1">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
-          <article class="VINOS">
-            <a href="/productdetail/1">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
-          <article class="VINOS">
-            <a href="/productdetail/1">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
-        </div>
-        <div class="productos">
-          <article class="VINOS">
-            <a href="/productdetail/1">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
-          <article class="VINOS">
-            <a href="/productdetail/1">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
-          <article class="VINOS">
-            <a href="/productdetail/1">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
-          <article class="VINOS">
-            <a href="/productdetail/1">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-              />
-              <div class="descripcion-articulo">
-                <i class="fa-solid fa-wine-bottle"></i>
-                <p class="precio">$2000</p>
-                <p class="descuento">40% OFF</p>
-                <h4 class="titulo">GRAN RESERVA MALBEC</h4>
-              </div>
-            </a>
-          </article>
+
         </div>
       </section>
     </main>
 
     <%- include ("partials/footer") %>
-
-    <!--     <footer>
-      <div class="newsletter">
-        <h4>Newsletter</h4>
-
-        <input type="search" />
-        <button type="submit">Suscribirse</button>
-      </div>
-      <div class="pie-pagina">
-        <div class="div-logo-footer">
-          <img src="/img/digitalwines-transparent.png" class="logo-footer" />
-        </div>
-
-        <div class="footer-flex">
-          <nav class="nav-explorer-footer">
-            <ul class="lista">
-              <li><a href="#">Tienda</a></li>
-              <li><a href="/about-us">Sobre nosotros</a></li>
-              <li><a href="#">Contacto</a></li>
-            </ul>
-          </nav>
-
-          <nav class="nav-utility-footer">
-            <ul class="lista">
-              <li>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </footer> -->
   </body>
 </html>
