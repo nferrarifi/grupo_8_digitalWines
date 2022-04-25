@@ -137,7 +137,7 @@ main section article:hover {
 footer {
   background-color: #3d0704;
   padding: 5px;
-  position: absolute;
+  position: relative;
   bottom: 0px;
   width: 100%
 }
@@ -220,6 +220,10 @@ footer nav li {
     width: 30%;
     margin: 10px;
   }
+  footer {
+    position: absolute;
+  }
 }
+
 
 

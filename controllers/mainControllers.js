@@ -1,6 +1,8 @@
 const express = require ("express")
+const fs = require ("fs")
 const path = require ("path")
-const products = require ('../models/products')
+const productsFilePath = path.join(__dirname, '../data/products.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const destacados = products.filter ((vino) => vino.destacado === true)
 
 
