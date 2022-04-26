@@ -32,48 +32,6 @@
 
     <%- include ("../partials/header") %>
 
-<!--     <header>
-      <div class="todo-header">
-        <div class="logo-div">
-          <img src="/img/digitalwines-transparent.png" class="logo-header" />
-        </div>
-        <div class="explorador">
-          <nav class="nav-explorer-header">
-            <ul class="lista">
-              <li>
-                <a href="/"><strong>Inicio</strong></a>
-              </li>
-              <li>
-                <a href="#"><strong>Tienda</strong></a>
-              </li>
-              <li>
-                <a href="/about-us"><strong>Sobre nosotros</strong></a>
-              </li>
-              <li>
-                <a href="#"><strong>Contacto</strong></a>
-              </li>
-            </ul>
-          </nav>
-
-          <nav class="nav-utility-header">
-            <ul class="lista">
-              <li>
-                <a href="/login" class="nav-icon"><i class="fas fa-user"></i></a>
-              </li>
-              <li>
-                <a href="/productCart" class="nav-icon"
-                  ><i class="fas fa-shopping-cart"></i
-                ></a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <div class="burger-menu">
-        <i class="fas fa-bars"></i>
-      </div>
-    </header> -->
-
     <main>
       <section class="main-product-section">
         <div class="main-product">
@@ -82,7 +40,7 @@
         </div>
           <div class="product-text">
             <h2 class="product-title"><%= product.name %></h2>
-            <h3 class="product-price"><%= product.price %></h4>
+            <h3 class="product-price">$<%= product.price %></h4>
             <h4 class="product-description"><%= product.descriptionTitle %></h6>
             <p>
               <%= product.description %>
@@ -93,6 +51,10 @@
             <button type="submit" class="add-product"><i class="fas fa-cart-plus"></i></button>
             </div>
             <div class="cart-button"><a href="productCart">Finalizar compra</a></div>
+            <div class="product-buttons">
+              <p ><a class="edit-button" href="/products/<%= product.id %>/edit">Editar</a></p>
+              <p ><a class="delete-button" href="/products/<%= product.id %>">Eliminar</a></p>
+            </div>
           </div>
         </div>
       </section>
@@ -136,42 +98,5 @@
     <%- include ("../partials/footer") %>
 
 
-<!--     <footer>
-      <div class="newsletter">
-        <h4>Newsletter</h4>
-
-        <input type="search" />
-        <button type="submit">Suscribirse</button>
-      </div>
-      <div class="pie-pagina">
-        <div class="div-logo-footer">
-          <img src="/img/digitalwines-transparent.png" class="logo-footer" />
-        </div>
-
-        <div class="footer-flex">
-          <nav class="nav-explorer-footer">
-            <ul class="lista">
-              <li><a href="#">Tienda</a></li>
-              <li><a href="/about-us">Sobre nosotros</a></li>
-              <li><a href="#">Contacto</a></li>
-            </ul>
-          </nav>
-
-          <nav class="nav-utility-footer">
-            <ul class="lista">
-              <li>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </footer> -->
   </body>
 </html>

@@ -5,8 +5,9 @@ const mainControllers = require ("../controllers/mainControllers")
 
 router.get("/", mainControllers.index);
   
+  router.get ("/products", mainControllers.products)
 
-  router.get("/productdetail/:id?", mainControllers.productDetail);
+  router.get("/products/:id", mainControllers.productDetail);
   
   router.get("/productCart", mainControllers.productCart  )
 
@@ -14,9 +15,7 @@ router.get("/", mainControllers.index);
 
   router.get("/login", mainControllers.login)
 
-
   router.get("/register", mainControllers.register)
-
 
   router.get("/about-us", mainControllers.about)
 
