@@ -196,6 +196,49 @@ main {
   color: #efefef;
 }
 
+.product-buttons{
+  display:flex;
+  width: 70%;
+  padding: 20px;
+  justify-content: center;
+
+}
+
+.edit-button {
+  border: 1px solid black;
+  background-color: #a76324;
+  text-decoration: none;
+  color: #efefef;
+  border-radius: 8px;
+  padding: 5px;
+  font-size: 12px;
+  transition: background-color 0.3s;
+
+}
+
+.edit-button:hover {
+  background-color: #7a4a1c;
+}
+
+
+
+.delete-button {
+  margin-left: 25px;
+  border: 1px solid black;
+  background-color: #a76324;
+  text-decoration: none;
+  color: #efefef;
+  border-radius: 8px;
+  font-size: 12px;
+  padding: 5px;
+  transition: background-color 0.3s;
+
+}
+
+.delete-button:hover {
+  background-color: #7e1212;
+}
+
 /*main product section*/
 
 /*related products section*/
@@ -310,6 +353,10 @@ footer nav li {
 /*FOOTER*/
 
 @media (min-width: 869px) {
+  footer {
+    position:relative;
+  }
+
   .nav-explorer-header {
     display: block;
   }

@@ -9,7 +9,7 @@
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="/css/styles.css"
+      href="/css/styles-products.css"
     />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -29,7 +29,7 @@
   </head>
 
   <body>
-    <%- include ("partials/header") %>
+    <%- include ("../partials/header") %>
     <main>
       <section>
         <div class="frase">
@@ -40,26 +40,29 @@
             Fellini
           </p>
         </div>
-        <div class="productos">
-          <% destacados.forEach(vino => { %>
-          <article class="VINOS">
-            <a href="/products/<%= vino.id %>">
-              <img
-                class="imagen-producto"
-                src="/img/red-wine-4813262_640.jpg"
-                alt=""
-            /></a>
-            <div class="descripcion-articulo">
-              <i class="fa-solid fa-wine-bottle"></i>
-              <p class="precio">$<%= vino.price %></p>
-              <p class="descuento"><%= vino.discount %>% OFF</p>
-              <h4 class="titulo"><%= vino.name %></h4>
-            </div>
-          </article>
-          <% }) %>
+        <container class="products-container">
+          <% products.forEach(vino => { %>
+          <div class="productos">
+            <article class="VINOS">
+              <a href="/products/<%= vino.id %>">
+                <img
+                  class="imagen-producto"
+                  src="/img/red-wine-4813262_640.jpg"
+                  alt=""
+              /></a>
+              <div class="descripcion-articulo">
+                <i class="fa-solid fa-wine-bottle"></i>
+                <p class="precio">$<%= vino.price %></p>
+                <p class="descuento"><%= vino.discount %>% OFF</p>
+                <h4 class="titulo"><%= vino.name %></h4>
+              </div>
+            </article>
+          </div>
         </div>
+        <% }) %>
+        </container>
       </section>
     </main>
-    <%- include ("partials/footer") %>
+    <%- include ("../partials/footer") %>
   </body>
 </html>
