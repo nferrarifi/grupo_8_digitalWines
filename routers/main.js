@@ -19,5 +19,7 @@ router.get("/", mainControllers.index);
 
   router.get("/about-us", mainControllers.about)
 
+  router.delete('/products/delete/:id', mainControllers.destroy);  
+
 
   module.exports = router

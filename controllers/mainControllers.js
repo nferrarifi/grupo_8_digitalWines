@@ -41,6 +41,17 @@ about: (req,res) => {
 
 newProduct: (req,res) => {
     res.render ('products/newProduct')
+},
+destroy : (req, res) => {
+    id=req.params.id
+    let aEliminar= products.filter((p)=> 
+    p.id != id
+    )
+    console.log(aEliminar)
+    fs.writeFileSync(productsFilePath, JSON.stringify(aEliminar), "utf-8");
+
+      res.redirect("/products");  
+
 }
 
 }

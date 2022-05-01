@@ -52,8 +52,11 @@
             </div>
             <div class="cart-button"><a href="productCart">Finalizar compra</a></div>
             <div class="product-buttons">
-              <p ><a class="edit-button" href="/products/<%= product.id %>/edit">Editar</a></p>
-              <p ><a class="delete-button" href="/products/<%= product.id %>">Eliminar</a></p>
+              <p ><a class="edit-button" href="/products/<%= product.id %>/edit">EDITAR</a></p>
+              <form action="/products/delete/<%=product.id%>?_method=DELETE" method="post">
+              
+              <button type="submit" class="delete-button">ELIMINAR</button>
+            </form>
             </div>
           </div>
         </div>
