@@ -52,7 +52,37 @@ destroy : (req, res) => {
 
       res.redirect("/products");  
 
-}
+},
+edit: (req, res) => {
+    let id = req.params.id
+    let productToEdit = products.find(element => element.id == id);
+    res.render("product-edit-form", {productToEdit})
+},
+
+update: (req, res) => {
+    let id = req.params.id
+    let productToEdit = products.find(element => element.id == id);
+    let image ="red-wine-4813262_640.jpg";
+    productToEdit = {
+        ...req.body,
+        id: id,
+        image,
+      };
+
+      let newEditProduct= products.map( (p)=>{
+          if(p.id == id){
+             return (p = { ...productToEdit});
+          }
+          return p;
+
+      })
+
+      fs.writeFileSync(productsFilePath, JSON.stringify(newEditProduct), "utf-8");
+
+      res.redirect("/");  
+    
+
+},
 
 }
 
