@@ -21,8 +21,8 @@ router.get("/", mainControllers.index);
 
   router.delete('/products/delete/:id', mainControllers.destroy);  
 
-router.get('products/edit/:id', mainControllers.edit);
- 
-router.patch('products/edit/:id', mainControllers.update); 
+router.get('/products/edit/:id', mainControllers.edit);
+
+router.patch('/products/edit/:id', mainControllers.update); 
 
   module.exports = router
