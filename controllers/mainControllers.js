@@ -1,3 +1,4 @@
+const { query } = require("express");
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -42,6 +43,10 @@ const mainControllers = {
   newProduct: (req, res) => {
     res.render("products/newProduct");
   },
+  crear: (req, res) => {
+    let createProduct = query.body;
+    res.render("products/crear");
+  },
   store: (req, res) => {
     res.redirect("/products");
   },
@@ -61,15 +66,15 @@ const mainControllers = {
 
   update: (req, res) => {
     let id = req.params.id;
-    console.log(req.body)
-    let productToEdit = products.find(element => element.id == id);
+    console.log(req.query);
+    let productToEdit = products.find((element) => element.id == id);
     let image = "red-wine-4813262_640.jpg";
     productToEdit = {
       ...req.body,
       id: id,
       image,
     };
-console.log(req.params.name)
+    console.log(req.body);
     let newEditProduct = products.map((p) => {
       if (p.id == id) {
         return (p = { ...productToEdit });

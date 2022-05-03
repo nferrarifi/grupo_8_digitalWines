@@ -34,7 +34,7 @@
       <section class="contenedor">
         <form
           action="/products/edit/<%=productToEdit.id%>?_method=PATCH"
-          method="post"
+          method="POST"
           class="form-product"
         >
           <div class="manejar-formulario">
@@ -52,6 +52,15 @@
             <input
               type="number"
               name="price"
+              placeholder="<%=productToEdit.price%>"
+              class="manejar-inputs"
+            />
+          </div>
+          <div class="manejar-formulario">
+            <label>Descuento</label>
+            <input
+              type="number"
+              name="discount"
               placeholder="<%=productToEdit.price%>"
               class="manejar-inputs"
             />
