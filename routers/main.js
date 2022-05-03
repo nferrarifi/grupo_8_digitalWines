@@ -26,3 +26,4 @@ router.get('/products/edit/:id', mainControllers.edit);
 router.patch('/products/edit/:id', mainControllers.update); 
 
   module.exports = router
+  
