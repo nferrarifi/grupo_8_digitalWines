@@ -66,7 +66,7 @@ const mainControllers = {
 
   update: (req, res) => {
     let id = req.params.id;
-    console.log(req.query);
+    
     let productToEdit = products.find((element) => element.id == id);
     let image = "red-wine-4813262_640.jpg";
     productToEdit = {
