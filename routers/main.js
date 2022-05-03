@@ -1,28 +1,28 @@
-const express = require ("express")
-const router = express.Router()
-const path = require ("path")
-const mainControllers = require ("../controllers/mainControllers")
+const express = require("express");
+const router = express.Router();
+const path = require("path");
+const mainControllers = require("../controllers/mainControllers");
 
 router.get("/", mainControllers.index);
-  
-  router.get ("/products", mainControllers.products)
 
-  router.get("/products/:id", mainControllers.productDetail);
-  
-  router.get("/productCart", mainControllers.productCart  )
+router.get("/products", mainControllers.products);
 
-  router.get("/newProduct", mainControllers.newProduct)
+router.get("/products/:id", mainControllers.productDetail);
 
-  router.get("/login", mainControllers.login)
+router.get("/productCart", mainControllers.productCart);
 
-  router.get("/register", mainControllers.register)
+router.get("/newProduct", mainControllers.newProduct);
 
-  router.get("/about-us", mainControllers.about)
+router.get("/login", mainControllers.login);
 
-  router.delete('/products/delete/:id', mainControllers.destroy);  
+router.get("/register", mainControllers.register);
 
-router.get('/products/edit/:id', mainControllers.edit);
+router.get("/about-us", mainControllers.about);
 
-router.patch('/products/edit/:id', mainControllers.update); 
+router.delete("/products/delete/:id", mainControllers.destroy);
 
-  module.exports = router
+router.get("/products/:id/edit", mainControllers.edit);
+
+router.patch("/products/:id/edit", mainControllers.update);
+
+module.exports = router;
