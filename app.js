@@ -3,7 +3,6 @@ const app = express();
 const router = require("./routers/main");
 const PORT = process.env.PORT || 3050;
 const methodOverride = require("method-override");
-const multer = require("multer");
 
 app.use(methodOverride("_method"));
 app.use(express.static("public"));
