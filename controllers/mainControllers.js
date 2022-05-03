@@ -61,22 +61,23 @@ const mainControllers = {
 
   update: (req, res) => {
     let id = req.params.id;
-    let productToEdit = products.find((element) => element.id == id);
+    console.log(req.query)
+    let productToEdit = products.find(element => element.id == id);
     let image = "red-wine-4813262_640.jpg";
     productToEdit = {
       ...req.body,
       id: id,
       image,
     };
-
+console.log(req.body)
     let newEditProduct = products.map((p) => {
       if (p.id == id) {
         return (p = { ...productToEdit });
       }
       return p;
     });
-    console.log(req.body);
-    //fs.writeFileSync(productsFilePath, JSON.stringify(newEditProduct), "utf-8");
+    console.log(productToEdit);
+    fs.writeFileSync(productsFilePath, JSON.stringify(newEditProduct), "utf-8");
 
     res.redirect("/");
   },

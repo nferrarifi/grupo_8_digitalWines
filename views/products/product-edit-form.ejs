@@ -33,15 +33,16 @@
     <main>
       <section class="contenedor">
         <form
-          action="/products/<%=productToEdit.id%>/edit?_method=PATCH"
+          action="/products/edit/<%=productToEdit.id%>?_method=PATCH"
           method="post"
           class="form-product"
         >
           <div class="manejar-formulario">
-            <label>Nombre del producto</label>
+            <label for="name">Nombre del producto</label>
             <input
               type="text"
               name="name"
+              id="name"
               class="manejar-inputs"
               placeholder="<%=productToEdit.name%> "
             />
