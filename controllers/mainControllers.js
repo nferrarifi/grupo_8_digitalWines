@@ -56,7 +56,7 @@ const mainControllers = {
   edit: (req, res) => {
     let id = req.params.id;
     let productToEdit = products.find((element) => element.id == id);
-    res.render("product-edit-form", { productToEdit });
+    res.render("products/product-edit-form", { productToEdit });
   },
 
   update: (req, res) => {
@@ -75,8 +75,8 @@ const mainControllers = {
       }
       return p;
     });
-
-    fs.writeFileSync(productsFilePath, JSON.stringify(newEditProduct), "utf-8");
+    console.log(req.body);
+    //fs.writeFileSync(productsFilePath, JSON.stringify(newEditProduct), "utf-8");
 
     res.redirect("/");
   },
