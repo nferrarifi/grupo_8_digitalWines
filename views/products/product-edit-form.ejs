@@ -33,21 +33,25 @@
     <main>
       <section class="contenedor">
         <form
-          action="products/crear"
-          method="POST"
+          action="/products/<%=productToEdit.id%>/edit?_method=PATCH"
+          method="post"
           class="form-product"
-          enctype="multipart/form-data"
         >
           <div class="manejar-formulario">
             <label>Nombre del producto</label>
-            <input type="text" name="nombre" class="manejar-inputs" />
+            <input
+              type="text"
+              name="name"
+              class="manejar-inputs"
+              placeholder="<%=productToEdit.name%> "
+            />
           </div>
           <div class="manejar-formulario">
             <label>Precio</label>
             <input
               type="number"
-              name="precio"
-              placeholder=""
+              name="price"
+              placeholder="<%=productToEdit.price%>"
               class="manejar-inputs"
             />
           </div>
