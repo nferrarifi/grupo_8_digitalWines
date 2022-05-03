@@ -61,7 +61,7 @@ const mainControllers = {
 
   update: (req, res) => {
     let id = req.params.id;
-    console.log(req.query)
+    console.log(req.body)
     let productToEdit = products.find(element => element.id == id);
     let image = "red-wine-4813262_640.jpg";
     productToEdit = {
@@ -69,7 +69,7 @@ const mainControllers = {
       id: id,
       image,
     };
-console.log(req.body)
+console.log(req.params.name)
     let newEditProduct = products.map((p) => {
       if (p.id == id) {
         return (p = { ...productToEdit });
