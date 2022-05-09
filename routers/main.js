@@ -34,9 +34,7 @@ router.post(
   mainControllers.store
 );
 
-router.get("/login", mainControllers.login);
 
-router.get("/register", mainControllers.register);
 
 router.get("/about-us", mainControllers.about);
 
