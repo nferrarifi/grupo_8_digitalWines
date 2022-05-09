@@ -79,34 +79,50 @@
 
       <section class="contenedor">
         <div class="form-login">
-          <form action="/" method="get">
-            <label for="User" class="label-text"> User </label><br />
-            <input type="text" name="User" placeholder="User" /><br />
-            <label for="password" class="label-text"> Password </label><br />
+          <form action="/register" method="POST" enctype="multipart/form-data">
+            <label for="Nombre" class="label-text"> Nombre/s </label><br />
+            <input type="text" name="nombre" placeholder="Juan" /><br />
+            <label for="Apellido" class="label-text"> Apellido/s </label><br />
+            <input type="text" name="apellido" placeholder="Pérez" /><br />
+            <label for="password" class="label-text"> Contraseña </label><br />
             <input
               type="password"
               name="password"
               placeholder="Password"
             /><br />
-            <label for="password">Confirmar contraseña</label>
-            <input type="password" name="password" placeholder="password" />
             <label for="email" class="label-text"> E-mail</label>
-            <input type="email" name="email" placeholder="e-mail" />
-            <label for="direccion" class="label-text">Address</label>
-            <input type="text" name="direccion" placeholder="Dirreción" /><br />
-
+            <input
+              type="email"
+              name="email"
+              placeholder="juanperez@gmail.com"
+            />
+            <label for="direccion" class="label-text">Dirección</label>
+            <input
+              type="text"
+              name="direccion"
+              placeholder="Avenida San Martin 1111"
+            /><br />
+            <div class="manejar-formulario">
+              <label for="foto" class="form_label">Imagen de perfil:</label>
+              <input
+                type="file"
+                name="imagenUsuario"
+                id="foto"
+                class="form_input"
+                accept=".jpg, .png"
+              />
+            </div>
             <p>
               Estoy de acuerdo con los <a href="#"> Terminos y Condiciones</a>
             </p>
-            <button type="submit" class="login-button">Register</button>
+            <button type="submit" class="login-button">Registrarse</button>
           </form>
         </div>
         <div class="options-login">
-          <h4>or Login whit</h4>
+          <h4>Ingresar con</h4>
           <br />
           <button type="button" class="facebook-button">Facebook</button><br />
           <button type="button" class="email-button">Email</button><br />
-          <button class="register-button" type="submit">Ingresar</button><br />
         </div>
       </section>
     </main>

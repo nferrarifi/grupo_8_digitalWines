@@ -1,0 +1,10 @@
+{
+    "id": 1,
+    "nombre": "Nahuel",
+    "apellido": "Ferrari",
+    "password": "$2a$10$Vww4biN1wpCsHaEEowdkoeegYyBAMV6Hd88xTu3awJaJ2i9PtdKgG",
+    "email": "dad@gmail.com",
+    "direccion": "Salvador maría del carril",
+    "imagenUsuario": "",
+    "admin": false
+  }

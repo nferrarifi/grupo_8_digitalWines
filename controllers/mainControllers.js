@@ -28,14 +28,6 @@ const mainControllers = {
     res.render("products/productCart");
   },
 
-  login: (req, res) => {
-    res.render("users/login");
-  },
-
-  register: (req, res) => {
-    res.render("users/register");
-  },
-
   about: (req, res) => {
     res.render("about-us");
   },
