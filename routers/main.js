@@ -24,17 +24,15 @@ router.get("/products/:id", mainControllers.productDetail);
 
 router.get("/productCart", mainControllers.productCart);
 
-router.get("/newProduct", mainControllers.newProduct);
+//router.get("/newProduct", mainControllers.newProduct);
 
-router.get("products/crear", mainControllers.crear);
+//router.get("products/crear", mainControllers.crear);
 
-router.post(
-  "/products/crear",
-  upload.single("imagenUsuario"),
-  mainControllers.store
-);
-
-
+//router.post(
+//  "/products/crear",
+// upload.single("imagenUsuario"),
+//  mainControllers.store
+//);
 
 router.get("/about-us", mainControllers.about);
 
