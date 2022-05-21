@@ -5,10 +5,33 @@ const path = require("path");
 const usersFilePath = path.join(__dirname, "../data/users.json");
 const bcrypt = require ('bcryptjs')
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+ 
 
 userControllers = {
     login: (req, res) => {
         res.render("users/login");
+      },
+      loginProcess:(req,res)=>{
+        let usuarioBuscado = users.find((element) => element.email == req.body.email);
+ 
+    if (usuarioBuscado){
+      let contrasenaOk= bcrypt.compareSync(req.body.password, usuarioBuscado.password)
+      if (contrasenaOk) {
+        delete usuarioBuscado.password
+        req.session.user = usuarioBuscado
+        
+        return res.redirect("/profile")
+        
+      }else{
+        res.send("error")
+      }
+    }else{
+      res.send("error")
+    }
+
+    
+        
+      
       },
     
     register: (req, res) => {
@@ -36,6 +59,11 @@ userControllers = {
     fs.writeFileSync(usersFilePath, JSON.stringify(users), "utf-8")
 
     res.redirect ("/")
+    },
+    profile: (req,res) =>{
+      console.log(req.session)
+      res.render("users/profile",{usuarioBuscado:req.session.user})
+
     }
 
 
