@@ -3,6 +3,7 @@ const usersRouter = express.Router();
 const multer = require("multer");
 const path = require("path");
 const userControllers = require("../controllers/userControllers");
+const userRegister = require("../middlewares/userRegister")
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -17,12 +18,12 @@ const storage = multer.diskStorage({
   
 const upload = multer({ storage });
 
-usersRouter.get("/login", userControllers.login);
+usersRouter.get("/login",userRegister, userControllers.login);
 
-usersRouter.post("/login", userControllers.loginProcess);
+usersRouter.post("/login", userRegister,userControllers.loginProcess);
 
 
-usersRouter.get("/register", userControllers.register);
+usersRouter.get("/register",userRegister, userControllers.register);
 
 usersRouter.get ("/userlist", userControllers.index)
 

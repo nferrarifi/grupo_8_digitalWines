@@ -23,10 +23,10 @@ userControllers = {
         return res.redirect("/profile")
         
       }else{
-        res.send("error")
+        res.render("users/login");
       }
     }else{
-      res.send("error")
+      res.render("users/login");
     }
 
     
