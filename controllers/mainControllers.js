@@ -32,16 +32,6 @@ const mainControllers = {
     res.render("about-us");
   },
 
-  newProduct: (req, res) => {
-    res.render("products/newProduct");
-  },
-  crear: (req, res) => {
-    let createProduct = query.body;
-    res.render("products/crear");
-  },
-  store: (req, res) => {
-    res.redirect("/products");
-  },
   destroy: (req, res) => {
     id = req.params.id;
     let aEliminar = products.filter((p) => p.id != id);

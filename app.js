@@ -3,6 +3,7 @@ const app = express();
 const router = require("./routers/main");
 const usersRouter = require("./routers/users");
 const session = require("express-session");
+const productsRouter = require("./routers/products");
 const PORT = process.env.PORT || 3050;
 const methodOverride = require("method-override");
 app.use(
@@ -15,4 +16,5 @@ app.use(methodOverride("_method"));
 app.use(express.static("public"));
 app.use(router);
 app.use(usersRouter);
+app.use(productsRouter);
 app.listen(PORT, () => console.log("servidor corriendo en el puerto 3050"));
