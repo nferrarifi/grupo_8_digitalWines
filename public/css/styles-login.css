@@ -196,6 +196,10 @@ section div form input {
   margin-bottom: 10px;
   font-size: 15px;
 }
+
+.checkbox {
+  width: 10%;
+}
 /*FOOTER*/
 footer {
   background-color: #3d0704;
