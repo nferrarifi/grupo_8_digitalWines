@@ -5,9 +5,12 @@ const path = require("path");
 const usersFilePath = path.join(__dirname, "../data/users.json");
 const bcrypt = require("bcryptjs");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+const db = require ("../models/index")
 
 userControllers = {
-  login: (req, res) => {
+  login: async (req, res) => {
+    const test = await (db.usuario.findByPk(1))
+    console.log (test)
     res.render("users/login");
   },
   loginProcess: (req, res) => {
