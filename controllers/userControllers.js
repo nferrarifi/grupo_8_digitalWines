@@ -4,19 +4,18 @@ const fs = require("fs");
 const path = require("path");
 const usersFilePath = path.join(__dirname, "../data/users.json");
 const bcrypt = require("bcryptjs");
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
-const db = require ("../models/index")
+/* const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+ */
+const db = require("../models/index");
 
 userControllers = {
   login: async (req, res) => {
-    const test = await (db.usuario.findByPk(1))
-    console.log (test)
     res.render("users/login");
   },
-  loginProcess: (req, res) => {
-    let usuarioBuscado = users.find(
-      (element) => element.email == req.body.email
-    );
+  loginProcess: async (req, res) => {
+    const usuarioBuscado = await db.usuario.findOne({
+      where: { email: req.body.email },
+    });
 
     if (usuarioBuscado) {
       let contrasenaOk = bcrypt.compareSync(
@@ -42,27 +41,33 @@ userControllers = {
 
   register: (req, res) => {
     res.render("users/register");
-    console.log(users);
   },
 
   index: (req, res) => res.render("users/userlist", { users }),
 
-  createUser: (req, res) => {
+  createUser: async (req, res) => {
     //Creacion de nuevo usuario y hasheo de contraseña
-    let newUser = {
+    /*     let newUser = {
       id: users.length + 1,
       ...req.body,
       imagenUsuario: req.file.filename,
       admin: false,
-    };
+    }; */
 
-    let hashedPassword = bcrypt.hashSync(newUser.password, 10);
-    newUser.password = hashedPassword;
-
-    console.log(newUser);
-    //Insercion del nuevo usuario en archivo JSON
+    let hashedPassword = bcrypt.hashSync(req.body.password, 2);
+    let { nombre, apellido, email, direccion } = req.body;
+    await db.usuario.create({
+      nombre: nombre,
+      apellido: apellido,
+      password: hashedPassword,
+      email: email,
+      direccion: direccion,
+      imagen: req.file.filename,
+      admin: 0,
+    });
+    /*     //Insercion del nuevo usuario en archivo JSON
     users.push(newUser);
-    fs.writeFileSync(usersFilePath, JSON.stringify(users), "utf-8");
+    fs.writeFileSync(usersFilePath, JSON.stringify(users), "utf-8"); */
 
     res.redirect("/");
   },
@@ -70,6 +75,28 @@ userControllers = {
     //console.log(req.session);
 
     res.render("users/profile", { usuarioBuscado: req.session.user });
+  },
+
+  edit: async (req, res) => {
+    console.log(req.session.user);
+    res.render("users/edit", { usuario: req.session.user });
+  },
+  editUser: async (req, res) => {
+    let hashedPassword = bcrypt.hashSync(req.body.password, 2);
+    let { nombre, apellido, email, direccion } = req.body;
+    await db.usuario.update(
+      {
+        nombre: nombre,
+        apellido: apellido,
+        email: email,
+        direccion: direccion,
+        imagen: req.file.filename,
+      },
+      {
+        where: { usuario_id: req.session.user.usuario_id },
+      }
+    );
+    res.redirect("users/edit");
   },
 };
 
