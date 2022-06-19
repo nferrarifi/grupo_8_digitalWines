@@ -5,6 +5,7 @@ const path = require("path");
 const userControllers = require("../controllers/userControllers");
 const userRegister = require("../middlewares/userRegister");
 const alreadyLogged = require("../middlewares/alreadyLogged");
+const notLogged = require("../middlewares/notLogged");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -38,6 +39,14 @@ usersRouter.post(
   "/register",
   upload.single("imagenUsuario"),
   userControllers.createUser
+);
+
+usersRouter.get("/useredit", notLogged, userControllers.edit);
+
+usersRouter.post(
+  "/useredit",
+  upload.single("imagenUsuario"),
+  userControllers.editUser
 );
 
 module.exports = usersRouter;

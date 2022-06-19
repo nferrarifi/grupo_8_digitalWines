@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Digital Wines - Inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="/css/styles-register.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="/css/normalize.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/86df6f0eff.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="todo-header">
+        <div class="logo-div">
+          <img src="/img/digitalwines-transparent.png" class="logo-header" />
+        </div>
+        <div class="explorador">
+          <nav class="nav-explorer-header">
+            <ul class="lista">
+              <li>
+                <a href="/"><strong>Inicio</strong></a>
+              </li>
+              <li>
+                <a href="#"><strong>Tienda</strong></a>
+              </li>
+              <li>
+                <a href="/about-us"><strong>Sobre nosotros</strong></a>
+              </li>
+              <li>
+                <a href="#"><strong>Contacto</strong></a>
+              </li>
+            </ul>
+          </nav>
+
+          <nav class="nav-utility-header">
+            <ul class="lista">
+              <li>
+                <a href="/login" class="nav-icon"
+                  ><i class="fas fa-user"></i
+                ></a>
+              </li>
+              <li>
+                <a href="/productCart" class="nav-icon"
+                  ><i class="fas fa-shopping-cart"></i
+                ></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="burger-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h3>Edit</h3>
+      </section>
+      <section class="contenedor">
+        <div class="form-login">
+          <form action="/useredit" method="POST" enctype="multipart/form-data">
+            <label for="Nombre" class="label-text"> Nombre/s </label><br />
+            <input
+              type="text"
+              name="nombre"
+              value="<%= usuario.nombre %>"
+            /><br />
+            <label for="Apellido" class="label-text"> Apellido/s </label><br />
+            <input
+              type="text"
+              name="apellido"
+              value="<%= usuario.apellido %>"
+            /><br />
+            <label for="password" class="label-text"> Contraseña </label><br />
+            <input type="password" name="password" /><br />
+            <label for="email" class="label-text"> E-mail</label>
+            <input type="email" name="email" value="<%= usuario.email %>" />
+            <label for="direccion" class="label-text">Dirección</label>
+            <input
+              type="text"
+              name="direccion"
+              value="<%= usuario.nombre %>"
+            /><br />
+            <div class="manejar-formulario">
+              <label for="foto" class="form_label">Imagen de perfil:</label>
+              <input
+                type="file"
+                name="imagenUsuario"
+                id="foto"
+                class="form_input"
+                accept=".jpg, .png"
+              />
+            </div>
+            <button type="submit" class="login-button">Editar</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="newsletter">
+        <h4>Newsletter</h4>
+
+        <input type="search" />
+        <button type="submit">Suscribirse</button>
+      </div>
+      <div class="pie-pagina">
+        <div class="div-logo-footer">
+          <img src="/img/digitalwines-transparent.png" class="logo-footer" />
+        </div>
+
+        <div class="footer-flex">
+          <nav class="nav-explorer-footer">
+            <ul class="lista">
+              <li><a href="#">Tienda</a></li>
+              <li><a href="/about-us">Sobre nosotros</a></li>
+              <li><a href="#">Contacto</a></li>
+            </ul>
+          </nav>
+
+          <nav class="nav-utility-footer">
+            <ul class="lista">
+              <li>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
