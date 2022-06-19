@@ -9,8 +9,8 @@ const db = require ("../models/index")
 
 userControllers = {
   login: async (req, res) => {
-    const test = await (db.usuario.findByPk(1))
-    console.log (test)
+    /* const test = await (db.usuario.findByPk(1))
+    console.log (test) */
     res.render("users/login");
   },
   loginProcess: (req, res) => {

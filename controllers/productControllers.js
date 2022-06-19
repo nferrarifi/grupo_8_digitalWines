@@ -6,24 +6,35 @@ const productsFilePath = path.join(__dirname, "../data/products.json");
 const bcrypt = require("bcryptjs");
 const { redirect } = require("express/lib/response");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const db =require("../models/index")
+const sequelize = db.sequelize;
 
 productControllers = {
   create: (req, res) => {
-    res.render("products/newProduct");
+    
+    const { nombre,precio,descuento,categoria,tamano,imagenProducto,descripcion} = req.body;
+    
+    db.producto.create({
+      nombre,precio,descuento,categoria,tamano,imagenProducto,descripcion
+     
+    })
+      .then(() => {
+        return res.redirect("/");
+      })
+      .catch((e) => {
+        console.log(e);
+        console.log("Changos!");
+      });
   },
 
   store: (req, res) => {
-    let newProduct = {
-      id: products.length + 1,
-      ...req.body,
-    };
-    console.log(newProduct);
 
-    products.push(newProduct);
-    fs.writeFileSync(productsFilePath, JSON.stringify(products), "utf-8");
 
-    res.redirect("products");
+  
+
+   return res.render("products/newProduct");
   },
+ 
 };
 
 module.exports = productControllers;
