@@ -36,7 +36,7 @@
           action="/newProduct"
           method="POST"
           class="form-product"
-          
+          enctype="multipart/form-data"
         >
           <div class="manejar-formulario">
             <label>Nombre del producto</label>
@@ -52,6 +52,22 @@
             />
           </div>
           <div class="manejar-formulario">
+            <label>Descuento</label>
+            <input
+              type="number"
+              name="descuento"
+              placeholder=""
+              class="manejar-inputs"
+            />
+          </div>
+          <div class="manejar-formulario">
+            <label>Descripcion</label>
+            <textarea name="descripcion" id="" cols="30" rows="10"class="manejar-inputs">
+             
+              
+            </textarea>
+          </div>
+          <div class="manejar-formulario">
             <label>Categoría</label>
             <select name="categoria" class="manejar-inputs">
               <option value="entry-level">Entry Level</option>
@@ -63,9 +79,16 @@
 
           <div class="manejar-formulario">
             <label>Tamaño</label>
-            <select name="tamano" class="manejar-inputs">
+            <select name="tamaño" class="manejar-inputs">
               <option value="375">375ml</option>
               <option value="750">750ml</option>
+            </select>
+          </div>
+          <div class="manejar-formulario">
+            <label>Destacado</label>
+            <select name="destacado" class="manejar-inputs">
+              <option value="2">si</option>
+              <option value="3">no</option>
             </select>
           </div>
 

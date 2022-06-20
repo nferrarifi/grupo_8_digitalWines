@@ -11,10 +11,7 @@ const mainControllers = {
     res.render("index", { destacados });
   },
 
-  products: (req, res) => {
-    let routeID = Number(req.params.id);
-    res.render("products/products", { products });
-  },
+ 
 
   productDetail: (req, res) => {
     let routeID = Number(req.params.id);
