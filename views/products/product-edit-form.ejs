@@ -33,26 +33,27 @@
     <main>
       <section class="contenedor">
         <form
-          action="/products/edit/<%=productToEdit.id%>?_method=PATCH"
+          action="/products/edit/<%=productToEdit.producto_id%>?_method=PATCH"
           method="POST"
           class="form-product"
+          enctype="multipart/form-data"
         >
           <div class="manejar-formulario">
             <label for="name">Nombre del producto</label>
             <input
               type="text"
-              name="name"
+              name="nombre"
               id="name"
               class="manejar-inputs"
-              placeholder="<%=productToEdit.name%> "
+              placeholder="<%=productToEdit.nombre%> "
             />
           </div>
           <div class="manejar-formulario">
             <label>Precio</label>
             <input
               type="number"
-              name="price"
-              placeholder="<%=productToEdit.price%>"
+              name="precio"
+              placeholder="<%=productToEdit.precio%>"
               class="manejar-inputs"
             />
           </div>
@@ -60,8 +61,8 @@
             <label>Descuento</label>
             <input
               type="number"
-              name="discount"
-              placeholder="<%=productToEdit.price%>"
+              name="descuento"
+              placeholder="<%=productToEdit.descuento%>"
               class="manejar-inputs"
             />
           </div>
@@ -82,12 +83,27 @@
               <option value="750">750ml</option>
             </select>
           </div>
+          <div class="manejar-formulario">
+            <label>Descripcion</label>
+            <textarea name="descripcion" id="" cols="30" rows="10"class="manejar-inputs" placeholder="<%=productToEdit.descripcion%>">
+             
+              
+            </textarea>
+          </div>
+
+          <div class="manejar-formulario">
+            <label>Destacado</label>
+            <select name="destacado" class="manejar-inputs">
+              <option value="2">si</option>
+              <option value="3">no</option>
+            </select>
+          </div>
 
           <div class="manejar-formulario">
             <label for="foto" class="form_label">Foto:</label>
             <input
               type="file"
-              name="foto"
+              name="imagenProducto"
               id="foto"
               class="form_input"
               accept=".jpg,png"
