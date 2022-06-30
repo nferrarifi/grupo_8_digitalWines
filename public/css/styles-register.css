@@ -192,6 +192,12 @@ section div form input {
 .facebook-button:hover {
   background-color: #3265d3d2;
 }
+
+.errors {
+  color: rgb(255, 77, 77);
+  font-weight: bold;
+  font-size: 90%;
+}
 /*FOOTER*/
 footer {
   background-color: #3d0704;

@@ -81,6 +81,10 @@
       <section class="contenedor">
         <div class="form-login">
           <form action="/login" method="post">
+            <% if (locals.errors) { %> <% errors.forEach(error => { %>
+            <div class="errors"><%=error.msg %></div>
+            <br />
+            <% }) %> <% } %>
             <label for="User" class="label-text"> User </label><br />
             <input type="text" name="email" placeholder="User" /><br />
             <label for="password" class="label-text"> Password </label><br />

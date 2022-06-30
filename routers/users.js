@@ -6,6 +6,8 @@ const userControllers = require("../controllers/userControllers");
 const userRegister = require("../middlewares/userRegister");
 const alreadyLogged = require("../middlewares/alreadyLogged");
 const notLogged = require("../middlewares/notLogged");
+const { register } = require("../../micuota/controller/userController");
+const { check } = require("express-validator");
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -20,9 +22,49 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
+//Validations
+const registerValidation = [
+  check("nombre")
+    .notEmpty()
+    .withMessage("Es obligatorio ingresar un nombre")
+    .isLength({ min: 2 })
+    .withMessage("El nombre debe tener un minimo de 2 caracteres"),
+  check("apellido")
+    .notEmpty()
+    .withMessage("Es obligatorio ingresar un apellido")
+    .isLength({ min: 2 })
+    .withMessage("El apellido debe tener un minimo de 2 caracteres"),
+  check("email")
+    .notEmpty()
+    .withMessage("Es obligatorio ingresar un email")
+    .isEmail()
+    .withMessage("Por favor ingrese un email válido"),
+  check("password")
+    .notEmpty()
+    .withMessage("Es obligatorio ingresar una contraseña")
+    .isLength({ min: 8 })
+    .withMessage("La contraseña debe tener un minimo de 8 caracteres"),
+];
+
+const loginValidation = [
+  check("email")
+    .notEmpty()
+    .withMessage("Es obligatorio ingresar un email")
+    .isEmail()
+    .withMessage("Por favor ingrese un email válido"),
+  check("password")
+    .notEmpty()
+    .withMessage("Es obligatorio ingresar una contraseña"),
+];
+
 usersRouter.get("/login", alreadyLogged, userRegister, userControllers.login);
 
-usersRouter.post("/login", userRegister, userControllers.loginProcess);
+usersRouter.post(
+  "/login",
+  userRegister,
+  loginValidation,
+  userControllers.loginProcess
+);
 
 usersRouter.get(
   "/register",
@@ -38,6 +80,7 @@ usersRouter.get("/profile", userControllers.profile);
 usersRouter.post(
   "/register",
   upload.single("imagenUsuario"),
+  registerValidation,
   userControllers.createUser
 );
 

@@ -80,6 +80,10 @@
       <section class="contenedor">
         <div class="form-login">
           <form action="/register" method="POST" enctype="multipart/form-data">
+            <% if (locals.errors) { %> <% errors.forEach(error => { %>
+            <div class="errors"><%=error.msg %></div>
+            <br />
+            <% }) %> <% } %>
             <label for="Nombre" class="label-text"> Nombre/s </label><br />
             <input type="text" name="nombre" placeholder="Juan" /><br />
             <label for="Apellido" class="label-text"> Apellido/s </label><br />

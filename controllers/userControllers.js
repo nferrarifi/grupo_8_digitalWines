@@ -2,7 +2,7 @@ const { query } = require("express");
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
-const usersFilePath = path.join(__dirname, "../data/users.json");
+let { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 /* const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
  */
@@ -13,6 +13,13 @@ userControllers = {
     res.render("users/login");
   },
   loginProcess: async (req, res) => {
+    //Validaciones
+    let errors = validationResult(req).errors;
+    if (errors.length > 0) {
+      console.log(errors);
+      return res.render("users/login", { errors });
+    }
+    //Proceso de login
     const usuarioBuscado = await db.usuario.findOne({
       where: { email: req.body.email },
     });
@@ -46,14 +53,23 @@ userControllers = {
   index: (req, res) => res.render("users/userlist", { users }),
 
   createUser: async (req, res) => {
+    //Validaciones
+    let errors = validationResult(req).errors;
+    //Validacion del mail repetido
+    let emailRepetido = await db.usuario.findOne({
+      where: { email: req.body.email },
+    });
+    if (emailRepetido) {
+      errors.push({
+        msg: "Ya existe un usuario con ese email",
+      });
+    }
+    //Retorno a la pagina de registro con impresion de errores
+    if (errors.length > 0) {
+      console.log(errors);
+      return res.render("users/register", { errors });
+    }
     //Creacion de nuevo usuario y hasheo de contraseña
-    /*     let newUser = {
-      id: users.length + 1,
-      ...req.body,
-      imagenUsuario: req.file.filename,
-      admin: false,
-    }; */
-
     let hashedPassword = bcrypt.hashSync(req.body.password, 2);
     let { nombre, apellido, email, direccion } = req.body;
     await db.usuario.create({
@@ -65,9 +81,6 @@ userControllers = {
       imagen: req.file.filename,
       admin: 0,
     });
-    /*     //Insercion del nuevo usuario en archivo JSON
-    users.push(newUser);
-    fs.writeFileSync(usersFilePath, JSON.stringify(users), "utf-8"); */
 
     res.redirect("/");
   },
