@@ -38,6 +38,10 @@
           class="form-product"
           enctype="multipart/form-data"
         >
+        <% if (locals.errors) { %> <% errors.forEach(error => { %>
+          <div class="errors"><%=error.msg %></div>
+          <br />
+          <% }) %> <% } %>
           <div class="manejar-formulario">
             <label for="name">Nombre del producto</label>
             <input
