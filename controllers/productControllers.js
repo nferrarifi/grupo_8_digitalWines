@@ -5,12 +5,19 @@ const path = require("path");
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const bcrypt = require("bcryptjs");
 const { redirect } = require("express/lib/response");
+let { validationResult } = require("express-validator");
 /* const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8")); */
 const db = require("../models/index");
 const sequelize = db.sequelize;
 
 productControllers = {
   create: (req, res) => {
+    let errors = validationResult(req).errors;
+    console.log(errors)
+    if (errors.length > 0) {
+      
+      return res.render("products/newProduct", { errors });
+    }
     const {
       nombre,
       precio,
@@ -48,6 +55,7 @@ productControllers = {
     let products = await db.producto.findAll({
       where: {
         destacado: 2,
+        
       },
     });
 
@@ -65,6 +73,12 @@ productControllers = {
   },
 
   update: (req, res) => {
+    let errors = validationResult(req).errors;
+    console.log(errors)
+    if (errors.length > 0) {
+      
+      return res.render("products/product-edit-form", { errors });
+    }
     let id = req.params.id;
     const {
       nombre,
@@ -98,6 +112,7 @@ productControllers = {
         return res.redirect("/products");
       });
   },
+
   destroy: (req, res) => {
     id = req.params.id;
    db.producto.update({destacado:1}, {where: {producto_id:id}}).then(()=> {

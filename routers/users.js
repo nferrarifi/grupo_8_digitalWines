@@ -6,7 +6,7 @@ const userControllers = require("../controllers/userControllers");
 const userRegister = require("../middlewares/userRegister");
 const alreadyLogged = require("../middlewares/alreadyLogged");
 const notLogged = require("../middlewares/notLogged");
-const { register } = require("../../micuota/controller/userController");
+/* const { register } = require("../../micuota/controller/userController"); */
 const { check } = require("express-validator");
 
 const storage = multer.diskStorage({
