@@ -26,6 +26,7 @@
       src="https://kit.fontawesome.com/86df6f0eff.js"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/registerValidation.js"></script>
   </head>
 
   <body>
@@ -79,32 +80,51 @@
 
       <section class="contenedor">
         <div class="form-login">
-          <form action="/register" method="POST" enctype="multipart/form-data">
+          <form
+            action="/register"
+            method="POST"
+            enctype="multipart/form-data"
+            id="form"
+          >
+            <div class="errors"></div>
             <% if (locals.errors) { %> <% errors.forEach(error => { %>
             <div class="errors"><%=error.msg %></div>
             <br />
             <% }) %> <% } %>
             <label for="Nombre" class="label-text"> Nombre/s </label><br />
-            <input type="text" name="nombre" placeholder="Juan" /><br />
+            <input
+              type="text"
+              name="nombre"
+              placeholder="Juan"
+              id="nombre"
+            /><br />
             <label for="Apellido" class="label-text"> Apellido/s </label><br />
-            <input type="text" name="apellido" placeholder="Pérez" /><br />
+            <input
+              type="text"
+              name="apellido"
+              placeholder="Pérez"
+              id="apellido"
+            /><br />
             <label for="password" class="label-text"> Contraseña </label><br />
             <input
               type="password"
               name="password"
               placeholder="Password"
+              id="password"
             /><br />
             <label for="email" class="label-text"> E-mail</label>
             <input
               type="email"
               name="email"
               placeholder="juanperez@gmail.com"
+              id="email"
             />
             <label for="direccion" class="label-text">Dirección</label>
             <input
               type="text"
               name="direccion"
               placeholder="Avenida San Martin 1111"
+              id="direccion"
             /><br />
             <div class="manejar-formulario">
               <label for="foto" class="form_label">Imagen de perfil:</label>

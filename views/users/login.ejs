@@ -26,6 +26,7 @@
       src="https://kit.fontawesome.com/86df6f0eff.js"
       crossorigin="anonymous"
     ></script>
+    <script src="/js/loginValidation.js"></script>
   </head>
 
   <body>
@@ -80,18 +81,25 @@
       </section>
       <section class="contenedor">
         <div class="form-login">
-          <form action="/login" method="post">
+          <form action="/login" method="post" id="form">
+            <div class="errors"></div>
             <% if (locals.errors) { %> <% errors.forEach(error => { %>
             <div class="errors"><%=error.msg %></div>
             <br />
             <% }) %> <% } %>
             <label for="User" class="label-text"> User </label><br />
-            <input type="text" name="email" placeholder="User" /><br />
+            <input
+              type="text"
+              name="email"
+              placeholder="User"
+              id="emailInput"
+            /><br />
             <label for="password" class="label-text"> Password </label><br />
             <input
               type="password"
               name="password"
               placeholder="Password"
+              id="passwordInput"
             /><br />
             <label class="recordarme">
               Recordarme
