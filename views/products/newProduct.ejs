@@ -40,7 +40,7 @@
         >
           <div class="manejar-formulario">
             <label>Nombre del producto</label>
-            <input type="text" name="nombre" class="manejar-inputs" />
+            <input type="text" name="nombre" class="manejar-inputs" id="name" />
           </div>
           <div class="manejar-formulario">
             <label>Precio</label>
@@ -49,6 +49,7 @@
               name="precio"
               placeholder=""
               class="manejar-inputs"
+              id="cost"
             />
           </div>
           <div class="manejar-formulario">
@@ -58,16 +59,21 @@
               name="descuento"
               placeholder=""
               class="manejar-inputs"
+              id="discount"
             />
           </div>
           <div class="manejar-formulario">
             <label>Descripcion</label>
-            <textarea name="descripcion" id="" cols="30" rows="10"class="manejar-inputs">
-             
-              
+            <textarea
+              name="descripcion"
+              id="description"
+              cols="30"
+              rows="10"
+              class="manejar-inputs"
+            >
             </textarea>
           </div>
-          <div class="manejar-formulario">
+          <div class="manejar-formulario" id="category">
             <label>Categoría</label>
             <select name="categoria" class="manejar-inputs">
               <option value="entry-level">Entry Level</option>
@@ -77,14 +83,14 @@
             </select>
           </div>
 
-          <div class="manejar-formulario">
+          <div class="manejar-formulario" id="size">
             <label>Tamaño</label>
             <select name="tamaño" class="manejar-inputs">
               <option value="375">375ml</option>
               <option value="750">750ml</option>
             </select>
           </div>
-          <div class="manejar-formulario">
+          <div class="manejar-formulario" id="destacado">
             <label>Destacado</label>
             <select name="destacado" class="manejar-inputs">
               <option value="2">si</option>
@@ -116,5 +122,6 @@
     </main>
 
     <%- include ("../partials/footer") %>
+    <script src="/js/productsValidation.js"></script>
   </body>
 </html>
