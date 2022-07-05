@@ -8,24 +8,19 @@ const notLogged = require("../middlewares/notLogged");
 const { check } = require("express-validator");
 const router = require("./main");
 const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, path.join(__dirname, "../public/img/product-create"));
-    },
-    filename: (req, file, cb) => {
-      const newFilename =
-        "profile" + Date.now() + path.extname(file.originalname);
-      cb(null, newFilename);
-    },
-  });
-  
-  const upload = multer({ storage });
-  //Validations
-  
-  
-  
-  
-  
-  
+  destination: (req, file, cb) => {
+    cb(null, path.join(__dirname, "../public/img/product-create"));
+  },
+  filename: (req, file, cb) => {
+    const newFilename =
+      "profile" + Date.now() + path.extname(file.originalname);
+    cb(null, newFilename);
+  },
+});
+
+const upload = multer({ storage });
+//Validations
+
 const newProductValidation = [
   check("nombre")
     .notEmpty()
@@ -36,28 +31,35 @@ const newProductValidation = [
     .notEmpty()
     .withMessage("Es obligatorio ingresar una descripcion")
     .isLength({ min: 2 }),
-    
-  check("precio")
+
+  check("precio").notEmpty().withMessage("Es obligatorio ingresar el precio"),
+  check("descuento")
     .notEmpty()
-    .withMessage("Es obligatorio ingresar el precio"),
-    check ("descuento")
-    .notEmpty()
-   .withMessage("es obligatorio ingresar el descuento")
-    
-  
- 
- 
-]; 
+    .withMessage("es obligatorio ingresar el descuento"),
+];
 
 productsRouter.get("/newProduct", notLogged, productControllers.store);
-productsRouter.post("/newProduct", notLogged,upload.single("imagenProducto"),newProductValidation, productControllers.create);
-productsRouter.get("/products",productControllers.products)
-productsRouter.get("/products/detail/:id", productControllers.productDetail)
+productsRouter.post(
+  "/newProduct",
+  notLogged,
+  upload.single("imagenProducto"),
+  newProductValidation,
+  productControllers.create
+);
+productsRouter.get("/products", productControllers.products);
+productsRouter.get("/products/detail/:id", productControllers.productDetail);
 productsRouter.delete("/products/delete/:id", productControllers.destroy);
 
 productsRouter.get("/products/edit/:id", productControllers.edit);
 
-productsRouter.patch("/products/edit/:id",upload.single("imagenProducto"),newProductValidation, productControllers.update);
-productsRouter.delete("/products/delete/:id",productControllers.destroy)
+productsRouter.patch(
+  "/products/edit/:id",
+  upload.single("imagenProducto"),
+  newProductValidation,
+  productControllers.update
+);
+productsRouter.delete("/products/delete/:id", productControllers.destroy);
+
+productsRouter.get("/products/search", productControllers.search);
 
 module.exports = productsRouter;

@@ -40,6 +40,12 @@
             Fellini
           </p>
         </div>
+        <div class="busqueda">
+          <form action="/products/search" method="get">
+          <input type="search" name="search" id="search" placeholder="¿Qué vino estás buscando?"/>
+    <button type="submit">Buscar</button>
+  </form>
+        </div>
         <container class="products-container">
           <% products.forEach(vino => { %>
           <div class="productos">

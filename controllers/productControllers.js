@@ -9,13 +9,13 @@ let { validationResult } = require("express-validator");
 /* const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8")); */
 const db = require("../models/index");
 const sequelize = db.sequelize;
+const { Op } = require("sequelize");
 
 productControllers = {
   create: (req, res) => {
     let errors = validationResult(req).errors;
-    console.log(errors)
+    console.log(errors);
     if (errors.length > 0) {
-      
       return res.render("products/newProduct", { errors });
     }
     const {
@@ -55,7 +55,6 @@ productControllers = {
     let products = await db.producto.findAll({
       where: {
         destacado: 2,
-        
       },
     });
 
@@ -74,9 +73,8 @@ productControllers = {
 
   update: (req, res) => {
     let errors = validationResult(req).errors;
-    console.log(errors)
+    console.log(errors);
     if (errors.length > 0) {
-      
       return res.render("products/product-edit-form", { errors });
     }
     let id = req.params.id;
@@ -115,11 +113,26 @@ productControllers = {
 
   destroy: (req, res) => {
     id = req.params.id;
-   db.producto.update({destacado:1}, {where: {producto_id:id}}).then(()=> {
-    return res.redirect("/products");
-   })
+    db.producto
+      .update({ destacado: 1 }, { where: { producto_id: id } })
+      .then(() => {
+        return res.redirect("/products");
+      });
+  },
 
-   
+  search: (req, res) => {
+    let { search } = req.query;
+    console.log({ search });
+
+    db.producto
+      .findAll({
+        where: { nombre: { [Op.like]: `%${search}%` } },
+      })
+      .then((products) => res.render("products/products", { products }))
+      .catch((e) => {
+        console.log(e);
+        console.log("que macana");
+      });
   },
 };
 
