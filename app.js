@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const router = require("./routers/main");
 const usersRouter = require("./routers/users");
+const productsApiRouter= require("./routers/api/productApi")
 const session = require("express-session");
 const productsRouter = require("./routers/products");
 const PORT = process.env.PORT || 3050;
@@ -24,4 +25,6 @@ app.use(express.static("public"));
 app.use(router);
 app.use(usersRouter);
 app.use(productsRouter);
+app.use(productsApiRouter);
+
 app.listen(PORT, () => console.log("servidor corriendo en el puerto 3050"));
