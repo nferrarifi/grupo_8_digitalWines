@@ -10,9 +10,8 @@
   }
   
   /*HEADER*/
-  
   .todo-header {
-    background-image: url(../img/barricas.jpg);
+    background-image: url(../img/barricas2.png);
     background-size: cover;
     display: flex;
     flex-wrap: nowrap;
@@ -21,7 +20,7 @@
   }
   
   .logo-div {
-    width: 20%;
+    width: 9%;
   }
   
   .logo-header {
@@ -41,19 +40,29 @@
   }
   
   .nav-explorer-header ul li a {
-    color: black;
-    border: solid black 3px;
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    color: rgb(255, 255, 255);
     text-decoration: none;
     padding: 5px;
-    background-color: rgba(185, 183, 183, 0.486);
+    margin-left: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.3s
+  }
+  
+  .nav-explorer-header ul li a:hover {
+    color:#868686
   }
   
   .nav-utility-header ul li a {
-    color: black;
+    color: rgb(10, 10, 10);
     text-decoration: none;
-    padding: 1px;
+    padding: 5px;
     border: none;
+    transition: color 0.3s
+  }
+  
+  .nav-utility-header ul li a:hover {
+    color: rgb(65, 64, 64);
   }
   
   .nav-icon i {
@@ -92,6 +101,7 @@
   .burger-menu {
     text-align: center;
   }
+  
   
   /*HEADER*/
   
@@ -160,7 +170,7 @@
   }
   
   .logo-footer {
-    width: 100%;
+    width: 50%;
   }
   .footer-flex {
     display: flex;
