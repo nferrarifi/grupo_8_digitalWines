@@ -127,9 +127,13 @@ main {
   width: 100%;
   margin: 0;
 }
+
 main section article img {
+  border-radius: 5px 0 0 0;
+  border-bottom: solid 1px rgb(136, 7, 7);
   width: 100%;
 }
+
 main section article {
   border-radius: 5px;
   margin: 20px 20px;
@@ -236,7 +240,7 @@ footer nav li {
     margin: 10px;
   }
   footer {
-    position: absolute;
+    position: relative;
   }
 }
 
