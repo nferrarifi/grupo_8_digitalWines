@@ -7,35 +7,49 @@ const { Op } = require("sequelize");
 const productApiController= {
 list: async (req, res) => {
     let products = await db.producto.findAll({
-        attributes:["producto_id","nombre", "descripcion"]
-      ,where: {
+        where: {
         destacado: 2,
       },
     });
+
     let respuesta ={
         meta: {
             status : 200,
             total: products.length,
-            url: "/api/product/:id"
+            
         },
-        data: products
+        data: []
     }
+
+    products.forEach(producto => {
+        respuesta.data.push({
+            id: producto.producto_id,
+            nombre: producto.nombre,
+            descripcion: producto.descripcion,
+            url : `/api/product/${producto.producto_id}`
+            
+        })
+        
+    });
    
     res.json(respuesta)
 },
 detail: async (req, res) => {
     console.log(req.params.id)
     let products = await db.producto.findByPk(req.params.id);
+    let urlImagen = `/../../public/img/product-create/${products.imagen}`
     let respuesta ={
         meta: {
             status : 200,
             
             
         },
-        data: products
+        data: products,
+
+       
     }
    
-    res.json(respuesta)
+    res.json({respuesta,urlImagen})
 }   
 }
 
