@@ -145,6 +145,10 @@ main section article:hover {
   text-decoration: none;
 }
 
+.car{
+  display: hide
+}
+
 /*BODY*/
 
 /*FOOTER*/
@@ -237,6 +241,12 @@ footer nav li {
   }
   footer {
     position: relative;
+  }
+
+  .car {
+    padding: 10px;
+    width: 80%;
+    margin: auto
   }
 
 }
