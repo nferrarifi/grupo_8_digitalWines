@@ -240,7 +240,7 @@ footer nav li {
     margin: 10px;
   }
   footer {
-    position: absolute;
+    position: relative;
   }
 }
 

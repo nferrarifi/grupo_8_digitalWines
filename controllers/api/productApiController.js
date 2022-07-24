@@ -6,53 +6,47 @@ const { Op } = require("sequelize");
 const productApiController = {
   list: async (req, res) => {
     let products = await db.producto.findAll({
-        where: {
+      where: {
         destacado: 2,
       },
     });
 
-    let respuesta ={
-        meta: {
-            status : 200,
-            total: products.length,
-            
-        },
-        data: []
-    }
+    let respuesta = {
+      meta: {
+        status: 200,
+        total: products.length,
+      },
+      data: [],
+    };
 
-    products.forEach(producto => {
-        respuesta.data.push({
-            id: producto.producto_id,
-            nombre: producto.nombre,
-            descripcion: producto.descripcion,
-            url : `/api/product/${producto.producto_id}`
-            
-        })
-        
+    products.forEach((producto) => {
+      respuesta.data.push({
+        id: producto.producto_id,
+        nombre: producto.nombre,
+        descripcion: producto.descripcion,
+        categoria: producto.categoria,
+        url: `/api/product/${producto.producto_id}`,
+      });
     });
-   
-    res.json(respuesta)
-},
-detail: async (req, res) => {
-    console.log(req.params.id)
+
+    res.json(respuesta);
+  },
+  detail: async (req, res) => {
+    console.log(req.params.id);
     let products = await db.producto.findByPk(req.params.id);
-    let urlImagen = `/../../public/img/product-create/${products.imagen}`
-    let respuesta ={
-        meta: {
-            status : 200,
-            
-            
-        },
-        data: products,
+    let urlImagen = `/../../public/img/product-create/${products.imagen}`;
+    let respuesta = {
+      meta: {
+        status: 200,
+      },
+      data: products,
+    };
 
-       
-    }
-   
-    res.json({respuesta,urlImagen})
-}   
-}
+    res.json({ respuesta, urlImagen });
+  },
+};
 
-
+/* 
     res.json(respuesta);
   },
   detail: async (req, res) => {
@@ -67,6 +61,6 @@ detail: async (req, res) => {
 
     res.json(respuesta);
   },
-};
+}; */
 
 module.exports = productApiController;
