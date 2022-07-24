@@ -52,7 +52,10 @@ productControllers = {
     return res.render("products/newProduct");
   },
   products: async (req, res) => {
-    let products = await db.producto.findAll();
+    let products = await db.producto.findAll(
+     { where: {
+      destacado: 2,
+    }});
 
     res.render("products/products", { products });
   },
