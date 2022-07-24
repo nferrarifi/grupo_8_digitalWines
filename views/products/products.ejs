@@ -42,8 +42,8 @@
         </div>
         <div class="busqueda">
           <form action="/products/search" method="get">
-          <input type="search" name="search" id="search" placeholder="¿Qué vino estás buscando?"/>
-    <button type="submit">Buscar</button>
+          <input class="search-input" type="search" name="search" id="search" placeholder="¿Qué vino estás buscando?"/>
+          <button class="search-button" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
   </form>
         </div>
         <container class="products-container">
@@ -51,11 +51,8 @@
           <div class="productos">
             <article class="VINOS">
               <a href="products/detail/<%= vino.producto_id %>">
-                <img
-                  class="imagen-producto"
-                  src="/img/winebottle.png"
-                  alt=""
-              /></a>
+                <img class="imagen-producto" src=/img/product-create/<%=
+                vino.imagen %> alt="" /></a>
               <div class="descripcion-articulo">
                 <i class="fa-solid fa-wine-bottle"></i>
                 <p class="precio">$<%= vino.precio %></p>

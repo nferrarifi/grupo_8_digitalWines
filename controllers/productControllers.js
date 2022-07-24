@@ -52,10 +52,11 @@ productControllers = {
     return res.render("products/newProduct");
   },
   products: async (req, res) => {
-    let products = await db.producto.findAll(
-     { where: {
-      destacado: 2,
-    }});
+    let products = await db.producto.findAll({
+      where: {
+        [Op.or]: [{ destacado: 2 }, { destacado: 3 }],
+      },
+    });
 
     res.render("products/products", { products });
   },
