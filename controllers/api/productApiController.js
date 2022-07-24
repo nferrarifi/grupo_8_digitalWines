@@ -53,20 +53,8 @@ detail: async (req, res) => {
 }
 
 
-    res.json(respuesta);
-  },
-  detail: async (req, res) => {
-    console.log(req.params.id);
-    let products = await db.producto.findByPk(req.params.id);
-    let respuesta = {
-      meta: {
-        status: 200,
-      },
-      data: products,
-    };
-
-    res.json(respuesta);
-  },
-};
+    
+  
+ 
 
 module.exports = productApiController;
