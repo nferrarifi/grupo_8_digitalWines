@@ -290,6 +290,11 @@ main {
   border: solid 2px peru;
 }
 
+.recommended-link {
+  width: 100%;
+  text-align: center;
+}
+
 .related-img {
   width: 50%;
   margin: auto;

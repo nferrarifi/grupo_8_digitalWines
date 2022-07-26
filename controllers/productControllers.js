@@ -60,9 +60,11 @@ productControllers = {
 
     res.render("products/products", { products });
   },
-  productDetail: (req, res) => {
+  productDetail: async (req, res) => {
+    const recommended = await db.producto.findAll({ limit: 4 });
+    console.log(recommended);
     db.producto.findByPk(req.params.id).then((product) => {
-      res.render("products/productdetail", { product });
+      res.render("products/productdetail", { product, recommended });
     });
   },
   edit: (req, res) => {

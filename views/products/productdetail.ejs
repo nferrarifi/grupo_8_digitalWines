@@ -31,7 +31,6 @@
   <body>
 
     <%- include ("../partials/header") %>
-
     <main>
       <section class="main-product-section">
         <div class="main-product">
@@ -65,36 +64,18 @@
 
       <section class="related-products-section">
             <h3 class="related-products-text">Productos relacionados</h3>
-
         <div class="related-products-imgs">
+          <% recommended.forEach(vino => { %>
             <container class="related-products-imgs-container">
+              <a class="recommended-link" href="/products/detail/<%= vino.producto_id %>">
                 <img src="/img/wine-bottle.png" class="related-img">
-                <p class="related-products-tag">
-                    <strong>Nombre</strong>
-                    $9,999
-                </p>
-            </container>
-            <container class="related-products-imgs-container">
-                <img src="/img/wine-bottle.png" class="related-img">
-                <p class="related-products-tag">
-                    <strong>Nombre</strong>
-                    $9,999
-                </p>
-            </container>
-            <container class="related-products-imgs-container">       
-                <img src="/img/wine-bottle.png" class="related-img">
-                <p class="related-products-tag">
-                    <strong>Nombre</strong>
-                    $9,999
-                </p>
-            </container>
-            <container class="related-products-imgs-container">
-                <img src="/img/wine-bottle.png" class="related-img">
-                <p class="related-products-tag">
-                    <strong>Nombre</strong>
-                    $9,999
-                </p>
-            </container>
+              </a>
+              <p class="related-products-tag">
+                  <strong><%= vino.nombre %></strong>
+                  $<%= vino.precio %>
+              </p>
+          </container>
+            <% }) %>    
         </div>
       </section>
     </main>
