@@ -24,6 +24,7 @@ const productApiController = {
         id: producto.producto_id,
         nombre: producto.nombre,
         descripcion: producto.descripcion,
+        precio: producto.precio,
         categoria: producto.categoria,
         url: `/api/product/${producto.producto_id}`,
       });
