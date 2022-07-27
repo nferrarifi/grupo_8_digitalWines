@@ -24,7 +24,11 @@
       <nav class="nav-utility-header">
         <ul class="lista">
           <li>
+            <% if (user) { %><strong
+              >Bienvenido <a href="/useredit"><%= user.nombre %>!</a> </strong
+            ><% } else { %>
             <a href="/login" class="nav-icon"><i class="fas fa-user"></i></a>
+            <% } %>
           </li>
           <li>
             <a href="/newProduct" class="nav-icon"

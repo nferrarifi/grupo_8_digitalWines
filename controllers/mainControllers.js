@@ -10,6 +10,7 @@ const sequelize = db.sequelize;
 
 const mainControllers = {
   index: async (req, res) => {
+    const user = req.session.user;
     let destacados = await db.producto.findAll({
       where: {
         destacado: 2,
@@ -17,15 +18,17 @@ const mainControllers = {
       limit: 6,
     });
 
-    res.render("index", { destacados });
+    res.render("index", { destacados, user });
   },
 
   productCart: (req, res) => {
-    res.render("products/productCart");
+    const user = req.session.user;
+    res.render("products/productCart", { user });
   },
 
   about: (req, res) => {
-    res.render("about-us");
+    const user = req.session.user;
+    res.render("about-us", { user });
   },
 };
 

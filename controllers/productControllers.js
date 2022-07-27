@@ -13,10 +13,11 @@ const { Op } = require("sequelize");
 
 productControllers = {
   create: (req, res) => {
+    const user = req.session.user;
     let errors = validationResult(req).errors;
     console.log(errors);
     if (errors.length > 0) {
-      return res.render("products/newProduct", { errors });
+      return res.render("products/newProduct", { errors, user });
     }
     const {
       nombre,
@@ -49,35 +50,46 @@ productControllers = {
   },
 
   store: (req, res) => {
-    return res.render("products/newProduct");
+    const user = req.session.user;
+    return res.render("products/newProduct", { user });
   },
   products: async (req, res) => {
+    const user = req.session.user;
     let products = await db.producto.findAll({
       where: {
         [Op.or]: [{ destacado: 2 }, { destacado: 3 }],
       },
     });
 
-    res.render("products/products", { products });
+    res.render("products/products", { products, user });
   },
   productDetail: async (req, res) => {
+    const user = req.session.user;
     const recommended = await db.producto.findAll({ limit: 4 });
     console.log(recommended);
     db.producto.findByPk(req.params.id).then((product) => {
-      res.render("products/productdetail", { product, recommended });
+      res.render("products/productdetail", { product, recommended, user });
     });
   },
   edit: (req, res) => {
+    const user = req.session.user;
     db.producto.findByPk(req.params.id).then((productToEdit) => {
-      res.render("products/product-edit-form", { productToEdit });
+      res.render("products/product-edit-form", { productToEdit, user });
     });
   },
 
   update: (req, res) => {
+    const user = req.session.user;
     let errors = validationResult(req).errors;
     console.log(errors);
     if (errors.length > 0) {
-      return res.render("products/product-edit-form", { errors });
+      db.producto.findByPk(req.params.id).then((productToEdit) => {
+        res.render("products/product-edit-form", {
+          errors,
+          productToEdit,
+          user,
+        });
+      });
     }
     let id = req.params.id;
     const {
@@ -89,6 +101,7 @@ productControllers = {
       descripcion,
       destacado,
     } = req.body;
+
     db.producto
       .update(
         {
@@ -98,9 +111,8 @@ productControllers = {
           categoria,
           tamaño,
           destacado,
-          imagen: req.file.filename,
-
           descripcion,
+          imagen: req.file?.filename || "winebottle.png",
         },
         {
           where: {
@@ -123,6 +135,7 @@ productControllers = {
   },
 
   search: (req, res) => {
+    const user = req.session.user;
     let { search } = req.query;
     console.log({ search });
 
@@ -130,7 +143,7 @@ productControllers = {
       .findAll({
         where: { nombre: { [Op.like]: `%${search}%` } },
       })
-      .then((products) => res.render("products/products", { products }))
+      .then((products) => res.render("products/products", { products, user }))
       .catch((e) => {
         console.log(e);
         console.log("que macana");

@@ -10,7 +10,8 @@ const db = require("../models/index");
 
 userControllers = {
   login: async (req, res) => {
-    res.render("users/login");
+    const user = req.session.user;
+    res.render("users/login", { user });
   },
   loginProcess: async (req, res) => {
     //Validaciones
@@ -47,12 +48,14 @@ userControllers = {
   },
 
   register: (req, res) => {
-    res.render("users/register");
+    const user = req.session.user;
+    res.render("users/register", { user });
   },
 
   index: (req, res) => res.render("users/userlist", { users }),
 
   createUser: async (req, res) => {
+    const user = req.session.user;
     //Validaciones
     let errors = validationResult(req).errors;
     //Validacion del mail repetido
@@ -67,7 +70,7 @@ userControllers = {
     //Retorno a la pagina de registro con impresion de errores
     if (errors.length > 0) {
       console.log(errors);
-      return res.render("users/register", { errors });
+      return res.render("users/register", { errors, user });
     }
     //Creacion de nuevo usuario y hasheo de contraseña
     let hashedPassword = bcrypt.hashSync(req.body.password, 2);
@@ -86,13 +89,14 @@ userControllers = {
   },
   profile: (req, res) => {
     //console.log(req.session);
-
-    res.render("users/profile", { usuarioBuscado: req.session.user });
+    const user = req.session.user;
+    res.render("users/profile", { usuarioBuscado: req.session.user, user });
   },
 
   edit: async (req, res) => {
+    const user = req.session.user;
     console.log(req.session.user);
-    res.render("users/edit", { usuario: req.session.user });
+    res.render("users/edit", { usuario: req.session.user, user });
   },
   editUser: async (req, res) => {
     let hashedPassword = bcrypt.hashSync(req.body.password, 2);
