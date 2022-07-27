@@ -33,12 +33,12 @@
     <main>
       <section class="contenedor">
         <form
-          action="/products/edit/<%=productToEdit.producto_id%>?_method=PATCH"
+          action="/products/edit/<%= productToEdit.producto_id %>?_method=PATCH"
           method="POST"
           class="form-product"
           enctype="multipart/form-data"
         >
-        <% if (locals.errors) { %> <% errors.forEach(error => { %>
+          <% if (locals.errors) { %> <% errors.forEach(error => { %>
           <div class="errors"><%=error.msg %></div>
           <br />
           <% }) %> <% } %>
@@ -49,7 +49,7 @@
               name="nombre"
               id="name"
               class="manejar-inputs"
-              placeholder="<%=productToEdit.nombre%> "
+              value="<%=productToEdit.nombre%>"
             />
           </div>
           <div class="manejar-formulario">
@@ -57,7 +57,7 @@
             <input
               type="number"
               name="precio"
-              placeholder="<%=productToEdit.precio%>"
+              value="<%=productToEdit.precio%>"
               class="manejar-inputs"
             />
           </div>
@@ -66,7 +66,7 @@
             <input
               type="number"
               name="descuento"
-              placeholder="<%=productToEdit.descuento%>"
+              value="<%=productToEdit.descuento%>"
               class="manejar-inputs"
             />
           </div>
@@ -89,8 +89,14 @@
           </div>
           <div class="manejar-formulario">
             <label>Descripcion</label>
-            <textarea name="descripcion" id="" cols="30" rows="10"class="manejar-inputs" placeholder="<%=productToEdit.descripcion%>">
-             
+            <textarea
+              name="descripcion"
+              id=""
+              cols="30"
+              rows="10"
+              class="manejar-inputs"
+            >
+              <%=productToEdit.descripcion%>
               
             </textarea>
           </div>
@@ -98,19 +104,31 @@
           <div class="manejar-formulario">
             <label>Destacado</label>
             <select name="destacado" class="manejar-inputs">
-              <option value="2">si</option>
-              <option value="3">no</option>
+              <option value="2">Si</option>
+              <option value="3">No</option>
             </select>
           </div>
 
-          <div class="manejar-formulario">
+          <div>
+            <label>Cambiar imagen</label>
+            <select id="nueva-imagen" name="nuevaimagen" class="manejar-inputs">
+              <option value="no">No</option>
+              <option value="si">Si</option>
+            </select>
+          </div>
+
+          <div
+            id="subir-imagen"
+            class="manejar-formulario"
+            style="display: none"
+          >
             <label for="foto" class="form_label">Foto:</label>
             <input
               type="file"
               name="imagenProducto"
               id="foto"
               class="form_input"
-              accept=".jpg,png"
+              accept=".jpg, .png"
             />
           </div>
 
@@ -128,4 +146,16 @@
 
     <%- include ("../partials/footer") %>
   </body>
+  <script>
+    const cambiaImagen = document.querySelector("#nueva-imagen");
+    cambiaImagen.addEventListener("change", (e) => {
+      console.log(cambiaImagen.selectedIndex);
+      if (cambiaImagen.selectedIndex == 1) {
+        document.querySelector("#subir-imagen").style.display = "block";
+      }
+      if (cambiaImagen.selectedIndex == 0) {
+        document.querySelector("#subir-imagen").style.display = "none";
+      }
+    });
+  </script>
 </html>
