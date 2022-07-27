@@ -12,7 +12,7 @@ const mainControllers = {
   index: async (req, res) => {
     let destacados = await db.producto.findAll({
       where: {
-        destacado: 1,
+        destacado: 2,
       },
       limit: 6,
     });

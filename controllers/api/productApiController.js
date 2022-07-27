@@ -7,7 +7,7 @@ const productApiController = {
   list: async (req, res) => {
     let products = await db.producto.findAll({
       where: {
-        destacado: 2,
+        [Op.or]: [{ destacado: 2 }, { destacado: 3 }],
       },
     });
 
