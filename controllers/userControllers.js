@@ -20,7 +20,7 @@ userControllers = {
     let errors = validationResult(req).errors;
     if (errors.length > 0) {
       console.log(errors);
-      return res.render("users/login", { errors });
+      return res.render("users/login", { errors, user });
     }
     //Proceso de login
     const usuarioBuscado = await db.usuario.findOne({
