@@ -113,7 +113,7 @@ userControllers = {
         where: { usuario_id: req.session.user.usuario_id },
       }
     );
-    res.redirect("users/edit");
+    res.redirect("/");
   },
 };
 
