@@ -50,7 +50,7 @@
             <input type="number" class="product-quantity"></input>
             <button type="submit" class="add-product"><i class="fas fa-cart-plus"></i></button>
             </div>
-            <div class="cart-button"><a href="productCart">Finalizar compra</a></div>
+            <div class="cart-button"><a href="http://localhost:3050/productCart">Finalizar compra</a></div>
             <div class="product-buttons">
               <p ><a class="edit-button" href="/products/edit/<%= product.producto_id %>">EDITAR</a></p>
               <form action="/products/delete/<%=product.producto_id%>?_method=DELETE" method="post">

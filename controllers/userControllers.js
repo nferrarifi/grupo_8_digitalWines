@@ -13,12 +13,14 @@ userControllers = {
     const user = req.session.user;
     res.render("users/login", { user });
   },
+
   loginProcess: async (req, res) => {
+    const user = req.session.user;
     //Validaciones
     let errors = validationResult(req).errors;
     if (errors.length > 0) {
       console.log(errors);
-      return res.render("users/login", { errors });
+      return res.render("users/login", { errors, user });
     }
     //Proceso de login
     const usuarioBuscado = await db.usuario.findOne({
@@ -38,12 +40,12 @@ userControllers = {
           res.cookie("userMail", req.body.email, { maxAge: 1000 * 60 * 60 });
         }
 
-        return res.redirect("/profile");
+        return res.redirect("/");
       } else {
-        res.render("users/login");
+        res.render("users/login", { user });
       }
     } else {
-      res.render("users/login");
+      res.render("users/login", { user });
     }
   },
 
